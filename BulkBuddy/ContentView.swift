@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+// MARK: - ContentView
+
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -18,6 +20,8 @@ struct ContentView: View {
         .padding()
     }
 }
+
+// MARK: - Preview
 
 #Preview {
     ContentView()
