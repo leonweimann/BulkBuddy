@@ -10,6 +10,8 @@ import SwiftUI
 // MARK: - ContentView
 
 struct ContentView: View {
+    @Environment(AppViewModel.self) var viewModel
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -24,5 +26,7 @@ struct ContentView: View {
 // MARK: - Preview
 
 #Preview {
-    ContentView()
+    HandledEnvironment {
+        ContentView()
+    }
 }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
+		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F52BA3891F0041171C /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F42BA3891F0041171C /* Mockable.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
 		AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FB2BA38A120041171C /* AppViewModel.swift */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
+		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		AB4E09F42BA3891F0041171C /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB4E09FB2BA38A120041171C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
@@ -107,6 +111,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB29D24D2BA427CC00489A34 /* HandledEnvironment */ = {
+			isa = PBXGroup;
+			children = (
+				AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */,
+			);
+			path = HandledEnvironment;
+			sourceTree = "<group>";
+		};
+		AB29D2502BA42C5300489A34 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				AB29D2512BA42C6200489A34 /* ApplicationState */,
+				AB29D24D2BA427CC00489A34 /* HandledEnvironment */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		AB29D2512BA42C6200489A34 /* ApplicationState */ = {
+			isa = PBXGroup;
+			children = (
+				AB29D2522BA42C7200489A34 /* ApplicationState.swift */,
+			);
+			path = ApplicationState;
+			sourceTree = "<group>";
+		};
 		AB4E09F32BA3890F0041171C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +281,7 @@
 		ABFF574F2BA388360073DA45 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				AB29D2502BA42C5300489A34 /* Environment */,
 				AB4E0A072BA391E30041171C /* DependencyInjection */,
 				AB4E09F32BA3890F0041171C /* Protocols */,
 			);
@@ -440,9 +470,11 @@
 				ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */,
 				AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */,
 				AB4E0A012BA38D170041171C /* AuthenticationClient.swift in Sources */,
+				AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */,
 				AB4E09F52BA3891F0041171C /* Mockable.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
+				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

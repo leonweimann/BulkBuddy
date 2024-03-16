@@ -13,20 +13,19 @@ import SwiftUI
 @main
 struct BulkBuddyApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
-    
-    @State private var viewModel = AppViewModel()
-    
+        
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HandledEnvironment(state: .production) {
+                ContentView()
+            }
         }
-        .environment(viewModel)
     }
 }
 
 // MARK: - AppDelegate
 
-private final class AppDelegate: NSObject, UIApplicationDelegate {
+fileprivate final class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         return true

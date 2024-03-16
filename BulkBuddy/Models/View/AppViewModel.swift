@@ -11,6 +11,13 @@ import SwiftUI
 
 @Observable
 final class AppViewModel: Mockable {
-    static func production() -> AppViewModel { AppViewModel() }
-    static func mocked() -> AppViewModel { AppViewModel() }
+    private init(state applicationState: ApplicationState) {
+        InjectedValues.configure(for: applicationState)
+        self.applicationState = applicationState
+    }
+    
+    let applicationState: ApplicationState
+    
+    static func production() -> AppViewModel { AppViewModel(state: .production) }
+    static func mocked() -> AppViewModel { AppViewModel(state: .mocked) }
 }

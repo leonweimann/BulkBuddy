@@ -65,6 +65,17 @@ struct InjectedValues {
         get { current[keyPath: keyPath] }
         set { current[keyPath: keyPath] = newValue }
     }
+    
+    static func configure(for appState: ApplicationState) {
+        switch appState {
+        case .mocked:
+            Self[\.authClient] = MockAuthenticationClient()
+            Self[\.datastoreClient] = MockDatastoreClient()
+        case .production:
+            Self[\.authClient] = FirebaseAuthenticationClient()
+            Self[\.datastoreClient] = FirebaseDatastoreClient()
+        }
+    }
 }
 
 // MARK: Injected PropertyWrapper

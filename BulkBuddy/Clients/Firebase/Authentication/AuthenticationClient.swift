@@ -17,7 +17,7 @@ protocol AuthenticationClient {
 // MARK: - Injection Key
 
 fileprivate struct AuthenticationClientInjectionKey: InjectionKey {
-    static var currentValue: AuthenticationClient = MockAuthenticationClient()
+    static var currentValue: any AuthenticationClient = MockAuthenticationClient()
 }
 
 extension InjectedValues {
