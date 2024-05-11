@@ -6,17 +6,25 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
+import SwiftfulUI
 
 // MARK: - ProfileScreen
 
 struct ProfileScreen: View {
+    @Environment(\.router) private var router
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List {
+            
+        }
     }
 }
 
 // MARK: - Preview
 
 #Preview {
-    ProfileScreen()
+    HandledEnvironment {
+        ProfileScreen()
+    }
 }

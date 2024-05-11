@@ -24,7 +24,7 @@ struct Product: Identifiable, Equatable {
     
     static func == (lhs: Product, rhs: Product) -> Bool { lhs.id == rhs.id }
     
-    static var mock: Product = Product(
+    static let mock = Product(
         id: "prod001",
         title: "Organic Bananas",
         image: "bananas.jpg",

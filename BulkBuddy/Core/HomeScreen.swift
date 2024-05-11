@@ -16,17 +16,26 @@ struct HomeScreen: View {
     
     var body: some View {
         ScrollView(.vertical) {
-            
+            ContentUnavailableView(
+                "Home Screen",
+                systemImage: "clock.badge.exclamationmark",
+                description: Text("This screen will be developed in continues coding sessions")
+            )
+            .padding(.vertical, 128)
         }
         .navigationTitle("BulkBuddy")
         .toolbar {
-            Label("Profile", systemImage: "person.circle")
-                .font(.title2)
-                .padding(8)
-                .background(.black.opacity(0.001))
-                .offset(x: 8)
-                .asButton(.opacity, action: showProfileScreen)
+            profileButton
         }
+    }
+    
+    private var profileButton: some View {
+        Label("Profile", systemImage: "person.circle")
+            .font(.title2)
+            .padding(8)
+            .background(.black.opacity(0.001))
+            .offset(x: 8)
+            .asButton(.opacity, action: showProfileScreen)
     }
     
     private func showProfileScreen() {

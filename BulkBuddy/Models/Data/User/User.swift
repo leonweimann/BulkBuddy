@@ -23,7 +23,7 @@ struct User: Identifiable, Equatable {
     
     static func == (lhs: User, rhs: User) -> Bool { lhs.id == rhs.id }
     
-    static let mock: User = User(
+    static let mock = User(
         id: "user01",
         name: "John Doe",
         email: "john.doe@example.com",

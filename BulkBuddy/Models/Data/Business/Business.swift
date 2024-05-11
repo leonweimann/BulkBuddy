@@ -5,14 +5,22 @@
 //  Created by Leon Weimann on 11.05.24.
 //
 
-import SwiftUI
+import Foundation
 
-struct Business: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+// MARK: - Business
 
-#Preview {
-    Business()
+struct Business: Identifiable {
+    let id: String
+    var name: String
+    var address: String
+    var contactEmail: String
+    var phoneNumber: String
+    
+    static let mock = Business(
+        id: "BIZ10001",
+        name: "Gourmet Foods",
+        address: "123 Market St, Springfield, IL 62704",
+        contactEmail: "info@gourmetfoods.com",
+        phoneNumber: "555-1234"
+    )
 }
