@@ -5,8 +5,8 @@
 //  Created by Leon Weimann on 15.03.24.
 //
 
-import SwiftfulRouting
 import SwiftUI
+import SwiftfulRouting
 
 // MARK: - HandledEnvironment
 

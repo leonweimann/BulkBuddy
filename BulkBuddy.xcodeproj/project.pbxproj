@@ -21,6 +21,15 @@
 		AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */; };
 		AB8401462BEFF97A003AEAF7 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = AB8401452BEFF97A003AEAF7 /* SwiftfulRouting */; };
 		AB8401492BEFF994003AEAF7 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB8401482BEFF994003AEAF7 /* SwiftfulUI */; };
+		AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */; };
+		AB84014D2BEFFD6E003AEAF7 /* UserPermissionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */; };
+		AB84014F2BEFFD85003AEAF7 /* UserFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */; };
+		AB8401532BEFFE22003AEAF7 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401522BEFFE22003AEAF7 /* ProductCategory.swift */; };
+		AB8401552BF0007C003AEAF7 /* PriceUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401542BF0007C003AEAF7 /* PriceUnit.swift */; };
+		AB8401572BF002A2003AEAF7 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401562BF002A2003AEAF7 /* HomeScreen.swift */; };
+		AB8401592BF00520003AEAF7 /* ScanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401582BF00520003AEAF7 /* ScanScreen.swift */; };
+		AB84015B2BF00537003AEAF7 /* BasketScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015A2BF00537003AEAF7 /* BasketScreen.swift */; };
+		AB84015D2BF00555003AEAF7 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */; };
 		ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */; };
 		ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57162BA37E500073DA45 /* ContentView.swift */; };
 		ABFF57192BA37E530073DA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFF57182BA37E530073DA45 /* Assets.xcassets */; };
@@ -66,6 +75,15 @@
 		AB4E0A0B2BA394070041171C /* DatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatastoreClient.swift; sourceTree = "<group>"; };
+		AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasket.swift; sourceTree = "<group>"; };
+		AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPermissionLevel.swift; sourceTree = "<group>"; };
+		AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFamily.swift; sourceTree = "<group>"; };
+		AB8401522BEFFE22003AEAF7 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
+		AB8401542BF0007C003AEAF7 /* PriceUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUnit.swift; sourceTree = "<group>"; };
+		AB8401562BF002A2003AEAF7 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		AB8401582BF00520003AEAF7 /* ScanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanScreen.swift; sourceTree = "<group>"; };
+		AB84015A2BF00537003AEAF7 /* BasketScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreen.swift; sourceTree = "<group>"; };
+		AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		ABFF57112BA37E500073DA45 /* BulkBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulkBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkBuddyApp.swift; sourceTree = "<group>"; };
 		ABFF57162BA37E500073DA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,8 +150,8 @@
 		AB4E09F82BA3897F0041171C /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				AB4E09F62BA3897E0041171C /* User.swift */,
-				AB4E09FD2BA38B310041171C /* Product.swift */,
+				AB8401502BEFFDB0003AEAF7 /* User */,
+				AB8401512BEFFDB7003AEAF7 /* Product */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -186,6 +204,10 @@
 		AB8401422BEFF771003AEAF7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AB8401562BF002A2003AEAF7 /* HomeScreen.swift */,
+				AB8401582BF00520003AEAF7 /* ScanScreen.swift */,
+				AB84015A2BF00537003AEAF7 /* BasketScreen.swift */,
+				AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -195,6 +217,27 @@
 			children = (
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		AB8401502BEFFDB0003AEAF7 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				AB4E09F62BA3897E0041171C /* User.swift */,
+				AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */,
+				AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */,
+				AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		AB8401512BEFFDB7003AEAF7 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				AB4E09FD2BA38B310041171C /* Product.swift */,
+				AB8401522BEFFE22003AEAF7 /* ProductCategory.swift */,
+				AB8401542BF0007C003AEAF7 /* PriceUnit.swift */,
+			);
+			path = Product;
 			sourceTree = "<group>";
 		};
 		ABFF57082BA37E500073DA45 = {
@@ -442,19 +485,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB4E0A092BA391F00041171C /* DependencyInjectionContainer.swift in Sources */,
+				AB84014F2BEFFD85003AEAF7 /* UserFamily.swift in Sources */,
+				AB8401592BF00520003AEAF7 /* ScanScreen.swift in Sources */,
 				AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */,
 				AB4E0A042BA38D810041171C /* FirebaseAuthenticationClient.swift in Sources */,
 				AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */,
+				AB84014D2BEFFD6E003AEAF7 /* UserPermissionLevel.swift in Sources */,
 				AB4E09F72BA3897E0041171C /* User.swift in Sources */,
 				AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */,
+				AB8401552BF0007C003AEAF7 /* PriceUnit.swift in Sources */,
 				AB4E0A062BA38DAA0041171C /* MockAuthenticationClient.swift in Sources */,
 				ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */,
 				AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */,
 				AB4E0A012BA38D170041171C /* AuthenticationClient.swift in Sources */,
+				AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */,
+				AB8401532BEFFE22003AEAF7 /* ProductCategory.swift in Sources */,
 				AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */,
+				AB8401572BF002A2003AEAF7 /* HomeScreen.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
+				AB84015D2BF00555003AEAF7 /* ProfileScreen.swift in Sources */,
 				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,
+				AB84015B2BF00537003AEAF7 /* BasketScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

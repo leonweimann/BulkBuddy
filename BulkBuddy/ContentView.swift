@@ -13,13 +13,20 @@ struct ContentView: View {
     @Environment(AppViewModel.self) var viewModel
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            NavigationView {
+                HomeScreen()
+            }
+            .tabItem { Label("Home", systemImage: "house") }
+            
+            ScanScreen()
+                .tabItem { Label("Scan", systemImage: "qrcode.viewfinder") }
+            
+            NavigationView {
+                BasketScreen()
+            }
+            .tabItem { Label("Basket", systemImage: "basket") }
         }
-        .padding()
     }
 }
 
