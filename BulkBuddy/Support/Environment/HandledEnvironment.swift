@@ -25,6 +25,7 @@ struct HandledEnvironment<C>: View where C: View {
                 )
             )
         }
+        .tint(.indigo)
     }
     
     private struct HandledEnvironmentInternal: View {

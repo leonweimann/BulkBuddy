@@ -34,6 +34,8 @@
 		AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401622BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift */; };
 		AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401672BF01866003AEAF7 /* ImageLoader.swift */; };
 		AB84016B2BF01925003AEAF7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB84016A2BF01925003AEAF7 /* SDWebImageSwiftUI */; };
+		AB84016D2BF0250D003AEAF7 /* TeaserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */; };
+		AB84016F2BF02FFD003AEAF7 /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84016E2BF02FFD003AEAF7 /* AccountSettingsView.swift */; };
 		ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */; };
 		ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57162BA37E500073DA45 /* ContentView.swift */; };
 		ABFF57192BA37E530073DA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFF57182BA37E530073DA45 /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		AB84015F2BF00A12003AEAF7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		AB8401622BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+AccentColor.swift"; sourceTree = "<group>"; };
 		AB8401672BF01866003AEAF7 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaserCell.swift; sourceTree = "<group>"; };
+		AB84016E2BF02FFD003AEAF7 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		ABFF57112BA37E500073DA45 /* BulkBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulkBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkBuddyApp.swift; sourceTree = "<group>"; };
 		ABFF57162BA37E500073DA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -217,6 +221,7 @@
 				AB8401582BF00520003AEAF7 /* ScanScreen.swift */,
 				AB84015A2BF00537003AEAF7 /* BasketScreen.swift */,
 				AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */,
+				AB84016E2BF02FFD003AEAF7 /* AccountSettingsView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				AB8401672BF01866003AEAF7 /* ImageLoader.swift */,
+				AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -527,12 +533,14 @@
 				ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */,
 				AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */,
 				AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */,
+				AB84016D2BF0250D003AEAF7 /* TeaserCell.swift in Sources */,
 				AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */,
 				AB4E0A012BA38D170041171C /* AuthenticationClient.swift in Sources */,
 				AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */,
 				AB8401532BEFFE22003AEAF7 /* ProductCategory.swift in Sources */,
 				AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */,
 				AB8401572BF002A2003AEAF7 /* HomeScreen.swift in Sources */,
+				AB84016F2BF02FFD003AEAF7 /* AccountSettingsView.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
 				AB84015D2BF00555003AEAF7 /* ProfileScreen.swift in Sources */,

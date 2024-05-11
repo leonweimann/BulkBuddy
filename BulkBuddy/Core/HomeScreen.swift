@@ -32,9 +32,6 @@ struct HomeScreen: View {
     private var profileButton: some View {
         Label("Profile", systemImage: "person.circle")
             .font(.title2)
-            .padding(8)
-            .background(.black.opacity(0.001))
-            .offset(x: 8)
             .asButton(.opacity, action: showProfileScreen)
     }
     
