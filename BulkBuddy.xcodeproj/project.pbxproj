@@ -30,6 +30,10 @@
 		AB8401592BF00520003AEAF7 /* ScanScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401582BF00520003AEAF7 /* ScanScreen.swift */; };
 		AB84015B2BF00537003AEAF7 /* BasketScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015A2BF00537003AEAF7 /* BasketScreen.swift */; };
 		AB84015D2BF00555003AEAF7 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */; };
+		AB8401602BF00A12003AEAF7 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015F2BF00A12003AEAF7 /* Business.swift */; };
+		AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401622BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift */; };
+		AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8401672BF01866003AEAF7 /* ImageLoader.swift */; };
+		AB84016B2BF01925003AEAF7 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB84016A2BF01925003AEAF7 /* SDWebImageSwiftUI */; };
 		ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */; };
 		ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57162BA37E500073DA45 /* ContentView.swift */; };
 		ABFF57192BA37E530073DA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFF57182BA37E530073DA45 /* Assets.xcassets */; };
@@ -84,6 +88,9 @@
 		AB8401582BF00520003AEAF7 /* ScanScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanScreen.swift; sourceTree = "<group>"; };
 		AB84015A2BF00537003AEAF7 /* BasketScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketScreen.swift; sourceTree = "<group>"; };
 		AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		AB84015F2BF00A12003AEAF7 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		AB8401622BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShapeStyle+AccentColor.swift"; sourceTree = "<group>"; };
+		AB8401672BF01866003AEAF7 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		ABFF57112BA37E500073DA45 /* BulkBuddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BulkBuddy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkBuddyApp.swift; sourceTree = "<group>"; };
 		ABFF57162BA37E500073DA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +115,7 @@
 				ABFF574A2BA385640073DA45 /* FirebaseFirestoreSwift in Frameworks */,
 				AB8401462BEFF97A003AEAF7 /* SwiftfulRouting in Frameworks */,
 				ABFF57442BA385640073DA45 /* FirebaseAnalyticsSwift in Frameworks */,
+				AB84016B2BF01925003AEAF7 /* SDWebImageSwiftUI in Frameworks */,
 				ABFF57482BA385640073DA45 /* FirebaseFirestore in Frameworks */,
 				ABFF57462BA385640073DA45 /* FirebaseAuth in Frameworks */,
 				ABFF57422BA385640073DA45 /* FirebaseAnalytics in Frameworks */,
@@ -150,6 +158,7 @@
 		AB4E09F82BA3897F0041171C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				AB84015E2BF009F4003AEAF7 /* Business */,
 				AB8401502BEFFDB0003AEAF7 /* User */,
 				AB8401512BEFFDB7003AEAF7 /* Product */,
 			);
@@ -215,6 +224,7 @@
 		AB8401432BEFF775003AEAF7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AB8401672BF01866003AEAF7 /* ImageLoader.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -238,6 +248,22 @@
 				AB8401542BF0007C003AEAF7 /* PriceUnit.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		AB84015E2BF009F4003AEAF7 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				AB84015F2BF00A12003AEAF7 /* Business.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		AB8401612BF00C25003AEAF7 /* ConvinienceExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				AB8401622BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift */,
+			);
+			path = ConvinienceExtensions;
 			sourceTree = "<group>";
 		};
 		ABFF57082BA37E500073DA45 = {
@@ -317,6 +343,7 @@
 			children = (
 				AB29D2502BA42C5300489A34 /* Environment */,
 				AB4E0A072BA391E30041171C /* DependencyInjection */,
+				AB8401612BF00C25003AEAF7 /* ConvinienceExtensions */,
 				AB4E09F32BA3890F0041171C /* Protocols */,
 			);
 			path = Support;
@@ -363,6 +390,7 @@
 				ABFF57492BA385640073DA45 /* FirebaseFirestoreSwift */,
 				AB8401452BEFF97A003AEAF7 /* SwiftfulRouting */,
 				AB8401482BEFF994003AEAF7 /* SwiftfulUI */,
+				AB84016A2BF01925003AEAF7 /* SDWebImageSwiftUI */,
 			);
 			productName = BulkBuddy;
 			productReference = ABFF57112BA37E500073DA45 /* BulkBuddy.app */;
@@ -440,6 +468,7 @@
 				ABFF57402BA385640073DA45 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				AB8401442BEFF97A003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
 				AB8401472BEFF994003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
+				AB8401692BF01925003AEAF7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = ABFF57122BA37E500073DA45 /* Products */;
 			projectDirPath = "";
@@ -496,6 +525,8 @@
 				AB8401552BF0007C003AEAF7 /* PriceUnit.swift in Sources */,
 				AB4E0A062BA38DAA0041171C /* MockAuthenticationClient.swift in Sources */,
 				ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */,
+				AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */,
+				AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */,
 				AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */,
 				AB4E0A012BA38D170041171C /* AuthenticationClient.swift in Sources */,
 				AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */,
@@ -505,6 +536,7 @@
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
 				AB84015D2BF00555003AEAF7 /* ProfileScreen.swift in Sources */,
+				AB8401602BF00A12003AEAF7 /* Business.swift in Sources */,
 				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,
 				AB84015B2BF00537003AEAF7 /* BasketScreen.swift in Sources */,
 			);
@@ -887,6 +919,14 @@
 				minimumVersion = 1.2.0;
 			};
 		};
+		AB8401692BF01925003AEAF7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.4;
+			};
+		};
 		ABFF57402BA385640073DA45 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -907,6 +947,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB8401472BEFF994003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
 			productName = SwiftfulUI;
+		};
+		AB84016A2BF01925003AEAF7 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB8401692BF01925003AEAF7 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 		ABFF57412BA385640073DA45 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
