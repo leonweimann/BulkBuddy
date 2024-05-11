@@ -11,13 +11,6 @@ import SwiftUI
 
 enum ApplicationState {
     case mocked, production
-    
-    func viewModel() -> AppViewModel {
-        switch self {
-        case .mocked: return AppViewModel.mocked()
-        case .production: return AppViewModel.production()
-        }
-    }
 }
 
 // MARK: - ApplicationStateEnvironmentKey

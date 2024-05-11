@@ -16,7 +16,7 @@ struct BulkBuddyApp: App {
         
     var body: some Scene {
         WindowGroup {
-            HandledEnvironment(state: .production) {
+            HandledEnvironment(appState: .production) {
                 ContentView()
             }
         }

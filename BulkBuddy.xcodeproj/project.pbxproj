@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
-		AB4E09F52BA3891F0041171C /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F42BA3891F0041171C /* Mockable.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
 		AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FB2BA38A120041171C /* AppViewModel.swift */; };
 		AB4E09FE2BA38B310041171C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FD2BA38B310041171C /* Product.swift */; };
@@ -20,6 +19,8 @@
 		AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0B2BA394070041171C /* DatastoreClient.swift */; };
 		AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */; };
 		AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */; };
+		AB8401462BEFF97A003AEAF7 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = AB8401452BEFF97A003AEAF7 /* SwiftfulRouting */; };
+		AB8401492BEFF994003AEAF7 /* SwiftfulUI in Frameworks */ = {isa = PBXBuildFile; productRef = AB8401482BEFF994003AEAF7 /* SwiftfulUI */; };
 		ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */; };
 		ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57162BA37E500073DA45 /* ContentView.swift */; };
 		ABFF57192BA37E530073DA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABFF57182BA37E530073DA45 /* Assets.xcassets */; };
@@ -55,7 +56,6 @@
 /* Begin PBXFileReference section */
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
-		AB4E09F42BA3891F0041171C /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB4E09FB2BA38A120041171C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		AB4E09FD2BA38B310041171C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -86,7 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB8401492BEFF994003AEAF7 /* SwiftfulUI in Frameworks */,
 				ABFF574A2BA385640073DA45 /* FirebaseFirestoreSwift in Frameworks */,
+				AB8401462BEFF97A003AEAF7 /* SwiftfulRouting in Frameworks */,
 				ABFF57442BA385640073DA45 /* FirebaseAnalyticsSwift in Frameworks */,
 				ABFF57482BA385640073DA45 /* FirebaseFirestore in Frameworks */,
 				ABFF57462BA385640073DA45 /* FirebaseAuth in Frameworks */,
@@ -111,35 +113,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AB29D24D2BA427CC00489A34 /* HandledEnvironment */ = {
-			isa = PBXGroup;
-			children = (
-				AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */,
-			);
-			path = HandledEnvironment;
-			sourceTree = "<group>";
-		};
 		AB29D2502BA42C5300489A34 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				AB29D2512BA42C6200489A34 /* ApplicationState */,
-				AB29D24D2BA427CC00489A34 /* HandledEnvironment */,
+				AB29D2522BA42C7200489A34 /* ApplicationState.swift */,
+				AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */,
 			);
 			path = Environment;
-			sourceTree = "<group>";
-		};
-		AB29D2512BA42C6200489A34 /* ApplicationState */ = {
-			isa = PBXGroup;
-			children = (
-				AB29D2522BA42C7200489A34 /* ApplicationState.swift */,
-			);
-			path = ApplicationState;
 			sourceTree = "<group>";
 		};
 		AB4E09F32BA3890F0041171C /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				AB4E09F42BA3891F0041171C /* Mockable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -198,6 +183,20 @@
 			path = Datastore;
 			sourceTree = "<group>";
 		};
+		AB8401422BEFF771003AEAF7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AB8401432BEFF775003AEAF7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		ABFF57082BA37E500073DA45 = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +224,8 @@
 				ABFF574B2BA385780073DA45 /* GoogleService-Info.plist */,
 				ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */,
 				ABFF57162BA37E500073DA45 /* ContentView.swift */,
-				ABFF57532BA388590073DA45 /* Components */,
+				AB8401422BEFF771003AEAF7 /* Core */,
+				AB8401432BEFF775003AEAF7 /* Components */,
 				ABFF57522BA388410073DA45 /* Clients */,
 				ABFF57512BA3883C0073DA45 /* Models */,
 				ABFF574E2BA388220073DA45 /* Support */,
@@ -272,27 +272,11 @@
 		ABFF574E2BA388220073DA45 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				ABFF57502BA388390073DA45 /* Visual */,
-				ABFF574F2BA388360073DA45 /* Logic */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		ABFF574F2BA388360073DA45 /* Logic */ = {
-			isa = PBXGroup;
-			children = (
 				AB29D2502BA42C5300489A34 /* Environment */,
 				AB4E0A072BA391E30041171C /* DependencyInjection */,
 				AB4E09F32BA3890F0041171C /* Protocols */,
 			);
-			path = Logic;
-			sourceTree = "<group>";
-		};
-		ABFF57502BA388390073DA45 /* Visual */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Visual;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		ABFF57512BA3883C0073DA45 /* Models */ = {
@@ -310,13 +294,6 @@
 				AB4E09FF2BA38CED0041171C /* Firebase */,
 			);
 			path = Clients;
-			sourceTree = "<group>";
-		};
-		ABFF57532BA388590073DA45 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,6 +318,8 @@
 				ABFF57452BA385640073DA45 /* FirebaseAuth */,
 				ABFF57472BA385640073DA45 /* FirebaseFirestore */,
 				ABFF57492BA385640073DA45 /* FirebaseFirestoreSwift */,
+				AB8401452BEFF97A003AEAF7 /* SwiftfulRouting */,
+				AB8401482BEFF994003AEAF7 /* SwiftfulUI */,
 			);
 			productName = BulkBuddy;
 			productReference = ABFF57112BA37E500073DA45 /* BulkBuddy.app */;
@@ -416,6 +395,8 @@
 			mainGroup = ABFF57082BA37E500073DA45;
 			packageReferences = (
 				ABFF57402BA385640073DA45 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AB8401442BEFF97A003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+				AB8401472BEFF994003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
 			);
 			productRefGroup = ABFF57122BA37E500073DA45 /* Products */;
 			projectDirPath = "";
@@ -471,7 +452,6 @@
 				AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */,
 				AB4E0A012BA38D170041171C /* AuthenticationClient.swift in Sources */,
 				AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */,
-				AB4E09F52BA3891F0041171C /* Mockable.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
 				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,
@@ -839,6 +819,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AB8401442BEFF97A003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulRouting";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.3.2;
+			};
+		};
+		AB8401472BEFF994003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftfulThinking/SwiftfulUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		ABFF57402BA385640073DA45 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -850,6 +846,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB8401452BEFF97A003AEAF7 /* SwiftfulRouting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB8401442BEFF97A003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */;
+			productName = SwiftfulRouting;
+		};
+		AB8401482BEFF994003AEAF7 /* SwiftfulUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB8401472BEFF994003AEAF7 /* XCRemoteSwiftPackageReference "SwiftfulUI" */;
+			productName = SwiftfulUI;
+		};
 		ABFF57412BA385640073DA45 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ABFF57402BA385640073DA45 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
