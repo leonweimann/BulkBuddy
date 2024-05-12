@@ -11,7 +11,11 @@ import Foundation
 // MARK: - AuthenticationClient
 
 protocol AuthenticationClient {
+    var isUserSigned: Bool { get }
     
+    func createUser(email: String, password: String) async throws
+    func signIn(email: String, password: String) async throws
+    func signOut() throws
 }
 
 // MARK: - Injection Key

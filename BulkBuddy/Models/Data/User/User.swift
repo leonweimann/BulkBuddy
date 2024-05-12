@@ -39,4 +39,19 @@ struct User: Identifiable, Equatable {
         family: UserFamily(),
         starredBusinesses: []
     )
+    
+    static let empty = User(
+        id: UUID().uuidString,
+        name: "",
+        email: "",
+        phoneNumber: "",
+        image: "",
+        birthDate: .now,
+        info: "",
+        balance: 0,
+        permission: .none,
+        basket: .init(),
+        family: .init(),
+        starredBusinesses: []
+    )
 }

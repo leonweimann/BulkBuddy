@@ -22,6 +22,12 @@ final class AppViewModel {
     let applicationState: ApplicationState
     
     var router: AnyRouter
+    
+    static var WelcomeRoute = AnyRoute(.fullScreenCover) { _ in
+        NavigationView {
+            WelcomeView()
+        }
+    }
         
     static func createFrom(appState: ApplicationState, with router: AnyRouter) -> AppViewModel { AppViewModel(state: appState, router: router) }
 }

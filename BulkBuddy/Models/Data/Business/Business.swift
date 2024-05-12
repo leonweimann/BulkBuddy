@@ -9,12 +9,14 @@ import Foundation
 
 // MARK: - Business
 
-struct Business: Identifiable {
+struct Business: Identifiable, Equatable {
     let id: String
     var name: String
     var address: String
     var contactEmail: String
     var phoneNumber: String
+    
+    static func == (lhs: Business, rhs: Business) -> Bool { lhs.id == rhs.id }
     
     static let mock = Business(
         id: "BIZ10001",
