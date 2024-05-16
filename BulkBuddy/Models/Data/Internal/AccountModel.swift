@@ -5,14 +5,14 @@
 //  Created by Leon Weimann on 12.05.24.
 //
 
-import SwiftUI
+import Foundation
 
-struct AccountModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+// MARK: - AccountModel
 
-#Preview {
-    AccountModel()
+struct AccountModel {
+    var email = ""
+    var password = ""
+    var passwordRepetition = ""
+    var name = ""
+    var birthDate = Date()
 }

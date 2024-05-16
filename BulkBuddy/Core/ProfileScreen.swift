@@ -5,9 +5,9 @@
 //  Created by Leon Weimann on 11.05.24.
 //
 
-import SwiftUI
 import SwiftfulRouting
 import SwiftfulUI
+import SwiftUI
 
 // MARK: - ProfileScreen
 

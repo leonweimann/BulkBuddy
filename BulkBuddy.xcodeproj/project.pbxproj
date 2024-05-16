@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB02C8FE2BF1256900A29E49 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C8FD2BF1256900A29E49 /* WelcomeView.swift */; };
+		AB02C9002BF12A3000A29E49 /* AnimatedWelcomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */; };
+		AB02C9052BF14BEC00A29E49 /* ValidationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C9042BF14BEC00A29E49 /* ValidationClient.swift */; };
+		AB02C9072BF1565000A29E49 /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C9062BF1565000A29E49 /* CreateAccountScreen.swift */; };
+		AB02C9092BF1592300A29E49 /* ConvenienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */; };
+		AB02C90D2BF16C9A00A29E49 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C90C2BF16C9A00A29E49 /* AccountModel.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
@@ -69,6 +75,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB02C8FD2BF1256900A29E49 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWelcomeCell.swift; sourceTree = "<group>"; };
+		AB02C9042BF14BEC00A29E49 /* ValidationClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationClient.swift; sourceTree = "<group>"; };
+		AB02C9062BF1565000A29E49 /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
+		AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceTextField.swift; sourceTree = "<group>"; };
+		AB02C90C2BF16C9A00A29E49 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,6 +155,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AB02C9032BF14BD700A29E49 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				AB02C9042BF14BEC00A29E49 /* ValidationClient.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		AB02C90B2BF16C9000A29E49 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				AB02C90C2BF16C9A00A29E49 /* AccountModel.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
 		AB29D2502BA42C5300489A34 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +190,7 @@
 		AB4E09F82BA3897F0041171C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				AB02C90B2BF16C9000A29E49 /* Internal */,
 				AB84015E2BF009F4003AEAF7 /* Business */,
 				AB8401502BEFFDB0003AEAF7 /* User */,
 				AB8401512BEFFDB7003AEAF7 /* Product */,
@@ -222,6 +251,8 @@
 				AB84015A2BF00537003AEAF7 /* BasketScreen.swift */,
 				AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */,
 				AB84016E2BF02FFD003AEAF7 /* AccountSettingsView.swift */,
+				AB02C8FD2BF1256900A29E49 /* WelcomeView.swift */,
+				AB02C9062BF1565000A29E49 /* CreateAccountScreen.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -231,6 +262,8 @@
 			children = (
 				AB8401672BF01866003AEAF7 /* ImageLoader.swift */,
 				AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */,
+				AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */,
+				AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -367,6 +400,7 @@
 		ABFF57522BA388410073DA45 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				AB02C9032BF14BD700A29E49 /* Internal */,
 				AB4E09FF2BA38CED0041171C /* Firebase */,
 			);
 			path = Clients;
@@ -532,17 +566,23 @@
 				AB4E0A062BA38DAA0041171C /* MockAuthenticationClient.swift in Sources */,
 				ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */,
 				AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */,
+				AB02C9002BF12A3000A29E49 /* AnimatedWelcomeCell.swift in Sources */,
 				AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */,
+				AB02C8FE2BF1256900A29E49 /* WelcomeView.swift in Sources */,
 				AB84016D2BF0250D003AEAF7 /* TeaserCell.swift in Sources */,
 				AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */,
 				AB4E0A012BA38D170041171C /* AuthenticationClient.swift in Sources */,
+				AB02C9092BF1592300A29E49 /* ConvenienceTextField.swift in Sources */,
+				AB02C9072BF1565000A29E49 /* CreateAccountScreen.swift in Sources */,
 				AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */,
 				AB8401532BEFFE22003AEAF7 /* ProductCategory.swift in Sources */,
 				AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */,
 				AB8401572BF002A2003AEAF7 /* HomeScreen.swift in Sources */,
 				AB84016F2BF02FFD003AEAF7 /* AccountSettingsView.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
+				AB02C90D2BF16C9A00A29E49 /* AccountModel.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
+				AB02C9052BF14BEC00A29E49 /* ValidationClient.swift in Sources */,
 				AB84015D2BF00555003AEAF7 /* ProfileScreen.swift in Sources */,
 				AB8401602BF00A12003AEAF7 /* Business.swift in Sources */,
 				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,

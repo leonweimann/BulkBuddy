@@ -11,5 +11,18 @@ import Foundation
 // MARK: - FirebaseAuthenticationClient
 
 final class FirebaseAuthenticationClient: AuthenticationClient {
+    private let auth = Auth.auth()
+    var isUserSigned: Bool { auth.currentUser != nil }
     
+    func createUser(email: String, password: String) async throws {
+        try await auth.createUser(withEmail: email, password: password)
+    }
+    
+    func signIn(email: String, password: String) async throws {
+        try await auth.signIn(withEmail: email, password: password)
+    }
+    
+    func signOut() throws {
+        try auth.signOut()
+    }
 }

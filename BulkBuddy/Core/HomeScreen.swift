@@ -5,9 +5,9 @@
 //  Created by Leon Weimann on 11.05.24.
 //
 
-import SwiftUI
 import SwiftfulRouting
 import SwiftfulUI
+import SwiftUI
 
 // MARK: - HomeScreen
 
@@ -22,6 +22,11 @@ struct HomeScreen: View {
                 description: Text("This screen will be developed in continues coding sessions")
             )
             .padding(.vertical, 128)
+            
+            Text("Show Welcome")
+                .asButton {
+                    router.showScreen(AppViewModel.WelcomeRoute)
+                }
         }
         .navigationTitle("BulkBuddy")
         .toolbar {
