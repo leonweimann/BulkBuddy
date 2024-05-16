@@ -9,4 +9,5 @@ import SwiftUI
 
 enum FirestoreError: Error {
     case encoding(String)
+    case notAvailable(String)
 }

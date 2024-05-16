@@ -12,7 +12,8 @@ import Foundation
 // MARK: - DatastoreClient
 
 protocol DatastoreClient {
-    
+    func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T: FirestoreData
+    func set(data: any FirestoreData) async throws
 }
 
 // MARK: - InjectionKey
