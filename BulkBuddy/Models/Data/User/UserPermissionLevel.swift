@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - UserPermissionLevel
 
-enum UserPermissionLevel: Int, CaseIterable, Comparable {
+enum UserPermissionLevel: Int, CaseIterable, Comparable, Codable {
     case none, mod, admin, owner
     
     

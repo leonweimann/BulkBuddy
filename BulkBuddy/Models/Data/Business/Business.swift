@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Business
 
-struct Business: Identifiable, Equatable {
+struct Business: Identifiable, Equatable, Codable {
     let id: String
     var name: String
     var address: String

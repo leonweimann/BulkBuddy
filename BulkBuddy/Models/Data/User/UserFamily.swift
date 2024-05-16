@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: - UserFamily
 
-struct UserFamily {
+struct UserFamily: Codable {
     
 }

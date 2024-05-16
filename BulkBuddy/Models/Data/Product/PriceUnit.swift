@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: - PriceUnit
 
-enum PriceUnit {
+enum PriceUnit: Codable {
     case piece, kilogram
 }

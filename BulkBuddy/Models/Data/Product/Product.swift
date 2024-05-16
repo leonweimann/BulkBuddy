@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Product
 
-struct Product: Identifiable, Equatable {
+struct Product: Identifiable, Equatable, Codable {
     let id: String
     var title: String
     var image: String

@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - ProductCategory
 
-struct ProductCategory: Identifiable {
+struct ProductCategory: Identifiable, Codable {
     let id: String
     var title: String
     var priceUnit: PriceUnit

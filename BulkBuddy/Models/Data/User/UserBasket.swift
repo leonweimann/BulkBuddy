@@ -9,6 +9,6 @@ import Foundation
 
 // MARK: - UserBasket
 
-struct UserBasket {
+struct UserBasket: Codable {
     
 }
