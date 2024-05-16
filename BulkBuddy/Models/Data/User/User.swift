@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - User
 
-struct User: Identifiable, Equatable, Codable {
+struct User: FirestoreData {
+    static let _collectionPath: String = "Users"
+    
     let id: String
     var name: String
     var email: String

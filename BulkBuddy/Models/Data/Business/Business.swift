@@ -9,14 +9,14 @@ import Foundation
 
 // MARK: - Business
 
-struct Business: Identifiable, Equatable, Codable {
+struct Business: FirestoreData {
+    static let _collectionPath: String = "Businesses"
+    
     let id: String
     var name: String
     var address: String
     var contactEmail: String
     var phoneNumber: String
-    
-    static func == (lhs: Business, rhs: Business) -> Bool { lhs.id == rhs.id }
     
     static let mock = Business(
         id: "BIZ10001",
