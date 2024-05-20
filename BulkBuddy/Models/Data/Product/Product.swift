@@ -9,7 +9,9 @@ import Foundation
 
 // MARK: - Product
 
-struct Product: Identifiable, Equatable {
+struct Product: FirestoreData {
+    static let _collectionPath: String = "Products"
+    
     let id: String
     var title: String
     var image: String
