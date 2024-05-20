@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,6 +25,7 @@
 		AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0B2BA394070041171C /* DatastoreClient.swift */; };
 		AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */; };
 		AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */; };
+		AB833E852BFB8372005E5DA6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */; };
 		AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */; };
 		AB84014D2BEFFD6E003AEAF7 /* UserPermissionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */; };
 		AB84014F2BEFFD85003AEAF7 /* UserFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */; };
@@ -94,6 +95,7 @@
 		AB4E0A0B2BA394070041171C /* DatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatastoreClient.swift; sourceTree = "<group>"; };
+		AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasket.swift; sourceTree = "<group>"; };
 		AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPermissionLevel.swift; sourceTree = "<group>"; };
 		AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFamily.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 				ABFF574D2BA387E50073DA45 /* Resources */,
 				ABFF571A2BA37E530073DA45 /* BulkBuddy.entitlements */,
 				ABFF571B2BA37E530073DA45 /* Preview Content */,
+				AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */,
 			);
 			path = BulkBuddy;
 			sourceTree = "<group>";
@@ -507,12 +510,13 @@
 				};
 			};
 			buildConfigurationList = ABFF570C2BA37E500073DA45 /* Build configuration list for PBXProject "BulkBuddy" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = ABFF57082BA37E500073DA45;
 			packageReferences = (
@@ -539,6 +543,7 @@
 			files = (
 				ABFF571D2BA37E530073DA45 /* Preview Assets.xcassets in Resources */,
 				ABFF57192BA37E530073DA45 /* Assets.xcassets in Resources */,
+				AB833E852BFB8372005E5DA6 /* Localizable.xcstrings in Resources */,
 				ABFF574C2BA385780073DA45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
