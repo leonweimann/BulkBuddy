@@ -7,14 +7,19 @@
 
 import Foundation
 
+// MARK: - FirestoreData
+
 protocol FirestoreData: Identifiable, Equatable, Codable {
     static var _collectionPath: String { get }
 }
 
+// MARK: - Helpers
+
 extension FirestoreData {
-    static func == (lhs: Self, rhs: Self) -> Bool {
-        lhs.id == rhs.id
-    }
+    var collectionPath: String { Self._collectionPath }
+    var documentPath: String { String(describing: id) }
+    
+    static func == (lhs: Self, rhs: Self) -> Bool { lhs.id == rhs.id }
     
     func firestoreDocumentData() throws -> [String : Any] {
         let data = try JSONEncoder().encode(self)
@@ -27,7 +32,4 @@ extension FirestoreData {
         
         return documentData
     }
-    
-    var collectionPath: String { Self._collectionPath }
-    var documentPath: String { String(describing: id) }
 }

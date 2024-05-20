@@ -205,8 +205,8 @@
 		AB4E09FF2BA38CED0041171C /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				AB4E0A0A2BA393FB0041171C /* Datastore */,
 				AB4E0A022BA38D730041171C /* Authentication */,
+				AB4E0A0A2BA393FB0041171C /* Datastore */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
