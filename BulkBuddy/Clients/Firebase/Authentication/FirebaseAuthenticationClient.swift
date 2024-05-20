@@ -12,7 +12,7 @@ import Foundation
 
 final class FirebaseAuthenticationClient: AuthenticationClient {
     private let auth = Auth.auth()
-    var isUserSigned: Bool { auth.currentUser != nil }
+    var authUser: FirebaseAuth.User? { auth.currentUser }
     
     func createUser(email: String, password: String) async throws {
         try await auth.createUser(withEmail: email, password: password)

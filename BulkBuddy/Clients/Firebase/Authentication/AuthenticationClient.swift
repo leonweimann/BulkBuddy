@@ -11,7 +11,7 @@ import Foundation
 // MARK: - AuthenticationClient
 
 protocol AuthenticationClient {
-    var isUserSigned: Bool { get }
+    var authUser: FirebaseAuth.User? { get }
     
     func createUser(email: String, password: String) async throws
     func signIn(email: String, password: String) async throws
