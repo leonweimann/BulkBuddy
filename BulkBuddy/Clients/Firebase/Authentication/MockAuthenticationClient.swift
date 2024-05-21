@@ -11,7 +11,7 @@ import Foundation
 // MARK: - MockAuthenticationClient
 
 final class MockAuthenticationClient: AuthenticationClient {
-    var isUserSigned: Bool = true
+    var authUser: FirebaseAuth.User? { nil }
     
     func createUser(email: String, password: String) async throws {
         print("User would be created with email '\(email)' and password '\(password)'.")
@@ -19,11 +19,9 @@ final class MockAuthenticationClient: AuthenticationClient {
     
     func signIn(email: String, password: String) async throws {
         print("User would be signed in with email '\(email)' and password '\(password)'.")
-        self.isUserSigned = true
     }
     
     func signOut() throws {
         print("User would be signed out.")
-        self.isUserSigned = false
     }
 }

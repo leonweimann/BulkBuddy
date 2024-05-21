@@ -13,7 +13,14 @@ import Foundation
 
 final class MockDatastoreClient: DatastoreClient {
     func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T : FirestoreData {
-        throw FirestoreError.notAvailable("This feature isn't available in that environment")
+        try await Task.sleep(for: .seconds(.random(in: 0..<2))) // For providing asynchrony
+        
+        switch dataType {
+        case is User.Type:
+            return User.mock as! T
+        default:
+            throw FirestoreError.notAvailable("This feature isn't available in that environment")
+        }
     }
     
     func set(data: any FirestoreData) async throws {

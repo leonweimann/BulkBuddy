@@ -26,6 +26,7 @@
 		AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */; };
 		AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */; };
 		AB833E852BFB8372005E5DA6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */; };
+		AB833E832BFB762A005E5DA6 /* AppProgressScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */; };
 		AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */; };
 		AB84014D2BEFFD6E003AEAF7 /* UserPermissionLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */; };
 		AB84014F2BEFFD85003AEAF7 /* UserFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */; };
@@ -96,6 +97,7 @@
 		AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatastoreClient.swift; sourceTree = "<group>"; };
 		AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProgressScreen.swift; sourceTree = "<group>"; };
 		AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasket.swift; sourceTree = "<group>"; };
 		AB84014C2BEFFD6E003AEAF7 /* UserPermissionLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPermissionLevel.swift; sourceTree = "<group>"; };
 		AB84014E2BEFFD85003AEAF7 /* UserFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFamily.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				AB84016E2BF02FFD003AEAF7 /* AccountSettingsView.swift */,
 				AB02C8FD2BF1256900A29E49 /* WelcomeView.swift */,
 				AB02C9062BF1565000A29E49 /* CreateAccountScreen.swift */,
+				AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */,
 				ABD55BC42BF6A7DF00FCEC4D /* FirestoreError.swift in Sources */,
 				AB84014D2BEFFD6E003AEAF7 /* UserPermissionLevel.swift in Sources */,
+				AB833E832BFB762A005E5DA6 /* AppProgressScreen.swift in Sources */,
 				ABD55BC12BF6A73100FCEC4D /* FirestoreData.swift in Sources */,
 				AB4E09F72BA3897E0041171C /* User.swift in Sources */,
 				AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */,
