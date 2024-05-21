@@ -21,6 +21,15 @@ final actor ValidationClient {
         }
     }
     
+    static func checkValidity(phoneNumber: String) -> Bool {
+        do {
+            return try Regex(#"/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm"#).wholeMatch(in: phoneNumber) != nil
+        } catch {
+            assertionFailure("Regular Expression for phoneNumber is invalid")
+            return false
+        }
+    }
+    
     static func checkValidity(password: String) -> Bool {
         do {
             return try Regex("(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}").wholeMatch(in: password) != nil
@@ -40,6 +49,10 @@ final actor ValidationClient {
 extension String {
     var isValidEmail: Bool {
         ValidationClient.checkValidity(eMail: self)
+    }
+    
+    var isValidPhoneNumber: Bool {
+        ValidationClient.checkValidity(phoneNumber: self)
     }
     
     var isValidPassword: Bool {
