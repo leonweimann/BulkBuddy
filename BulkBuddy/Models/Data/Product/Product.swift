@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Product
 
 struct Product: FirestoreData {
-    static let _collectionPath: String = "Products"
+    static let _collectionPath: String = "products"
     
     let id: String
     var title: String
