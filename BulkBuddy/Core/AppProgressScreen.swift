@@ -24,7 +24,6 @@ struct AppProgressScreen: View {
         ZStack {
             Rectangle()
                 .fill(.background)
-                .onTapGesture { animate.toggle() }
             
             VStack(alignment: .center, spacing: 32) {
                 ZStack {
@@ -46,6 +45,8 @@ struct AppProgressScreen: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .ignoresSafeArea()
         .onAppear { animate = true }
         .onDisappear { animate = false }
     }
