@@ -12,7 +12,7 @@ import SwiftUI
 // MARK: - HomeScreen
 
 struct HomeScreen: View {
-    @Environment(\.router) private var router
+    @Environment(AppViewModel.self) private var viewModel
     
     var body: some View {
         ScrollView(.vertical) {
@@ -25,7 +25,7 @@ struct HomeScreen: View {
             
             Text("Show Welcome")
                 .asButton {
-                    router.showScreen(AppViewModel.WelcomeRoute)
+                    viewModel.router.showScreen(AppViewModel.WelcomeRoute)
                 }
         }
         .navigationTitle("BulkBuddy")
@@ -41,9 +41,11 @@ struct HomeScreen: View {
     }
     
     private func showProfileScreen() {
-        router.showScreen(.sheet) { _ in
-            NavigationView {
-                ProfileScreen()
+        viewModel.router.showScreen(.sheet) { _ in
+            DependencyRelatedContent(viewModel.currentUser) { user in
+                NavigationView {
+                    ProfileScreen(user: user)
+                }
             }
         }
     }
