@@ -24,7 +24,7 @@ struct AnimatedWelcomeCell: View {
             .padding(.top, 96)
             .overlay(alignment: .top) {
                 bouncingIconsView
-                    .frame(height: (frame.height - 96) / 3.5)
+                    .frame(height: abs(frame.height - 96) / 3.5)
                     .padding()
             }
             .readingFrame {
