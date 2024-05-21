@@ -20,6 +20,7 @@ final class AppViewModel {
     }
     
     // MARK: Config
+    
     let applicationState: ApplicationState
     
     @ObservationIgnored
@@ -29,6 +30,7 @@ final class AppViewModel {
     @Injected(\.datastoreClient) private var datastoreClient
     
     // MARK: Routing
+    
     var router: AnyRouter
     
     /// Route to **WelcomeView**.
@@ -39,9 +41,11 @@ final class AppViewModel {
     }
     
     // MARK: Properties / Data
-    var currentUser: User?
+    
+    private(set) var currentUser: User? // User should never be bound to -> always 'commit' changes to it at once via helper func and then push / pull -> helper func handles it
     
     // MARK: Methods
+    
     static func createFrom(appState: ApplicationState, with router: AnyRouter) -> AppViewModel { AppViewModel(state: appState, router: router) }
     
     func inceptLoading() {
@@ -54,6 +58,10 @@ final class AppViewModel {
     
     func terminateLoading() {
         router.dismissModal(id: "appProgressScreen")
+    }
+    
+    func updateUser(_ newUser: User?) {
+        self.currentUser = newUser
     }
     
     func pullUserData() async {
