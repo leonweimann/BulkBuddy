@@ -44,6 +44,18 @@ final class AppViewModel {
     // MARK: Methods
     static func createFrom(appState: ApplicationState, with router: AnyRouter) -> AppViewModel { AppViewModel(state: appState, router: router) }
     
+    func inceptLoading() {
+        router.showModal(id: "appProgressScreen", transition: .push(from: .top), animation: .smooth) {
+            HandledEnvironment {
+                AppProgressScreen()
+            }
+        }
+    }
+    
+    func terminateLoading() {
+        router.dismissModal(id: "appProgressScreen")
+    }
+    
     func pullUserData() async {
         guard let authUser = authClient.authUser else { return } // force user to sign in
         
