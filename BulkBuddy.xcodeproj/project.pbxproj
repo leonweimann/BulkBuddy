@@ -250,8 +250,8 @@
 				AB8401582BF00520003AEAF7 /* ScanScreen.swift */,
 				AB84015A2BF00537003AEAF7 /* BasketScreen.swift */,
 				AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */,
-				AB9446D52BFD401600A907F2 /* User Related */,
 				AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */,
+				AB9446D52BFD401600A907F2 /* User Related */,
 			);
 			path = Core;
 			sourceTree = "<group>";

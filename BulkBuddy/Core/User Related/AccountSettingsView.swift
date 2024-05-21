@@ -12,15 +12,32 @@ import SwiftUI
 // MARK: - AccountSettingsView
 
 struct AccountSettingsView: View {
-    @Environment(\.router) private var router
+    @Environment(AppViewModel.self) private var viewModel
+    
+    // MARK: Properties
     
     var user: User = User.mock
+    
+    // MARK: Visual
     
     var body: some View {
         Form {
             deleteUserSection
         }
         .navigationTitle(user.name)
+        .toolbar { toolbar }
+    }
+    
+    private var toolbar: some ToolbarContent {
+        ToolbarItem {
+            Menu {
+                Button(action: copyUserID) {
+                    Label("Copy user id", systemImage: "doc.on.doc")
+                }
+            } label: {
+                Label("More", systemImage: "ellipsis.circle")
+            }
+        }
     }
     
     private var deleteUserSection: some View {
@@ -39,16 +56,26 @@ struct AccountSettingsView: View {
         }
     }
     
+    // MARK: Logic
+    
+    private func copyUserID() {
+        // TODO: Implementation
+    }
+    
     private func requestDeleteAccount() {
-        router.showAlert(
+        viewModel.router.showAlert(
             .confirmationDialog,
             title: "Permanently Delete Your Account",
             subtitle: "Please note that deleting your account is irreversible. Once deleted, all your data will be permanently removed, and you will not be able to retrieve any stored information or access the services with this account again. If you are certain you wish to proceed, click on the confirm button below. If you need further assistance or have any questions, please contact our support team."
         ) {
-            Button(role: .destructive, action: {}) {
+            Button(role: .destructive, action: handleDeleteAccount) {
                 Text("Confirm")
             }
         }
+    }
+    
+    private func handleDeleteAccount() {
+        // TODO: Implementation
     }
 }
 

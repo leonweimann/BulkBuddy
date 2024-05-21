@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "Access the interface of your business" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11,6 +14,9 @@
           }
         }
       }
+    },
+    "Alternative" : {
+
     },
     "Application Settings" : {
       "extractionState" : "manual",
@@ -34,6 +40,12 @@
         }
       }
     },
+    "Birth Date" : {
+
+    },
+    "BulkBuddy" : {
+
+    },
     "Business View" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -56,6 +68,21 @@
         }
       }
     },
+    "Confirm" : {
+
+    },
+    "Create your Account" : {
+
+    },
+    "eMail" : {
+
+    },
+    "Erase %@ from BulkBuddy" : {
+
+    },
+    "Hello, World!" : {
+
+    },
     "Home" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -66,6 +93,9 @@
           }
         }
       }
+    },
+    "Home Screen" : {
+
     },
     "Listed Businesses" : {
       "extractionState" : "manual",
@@ -78,6 +108,21 @@
         }
       }
     },
+    "More" : {
+
+    },
+    "Name" : {
+
+    },
+    "Password" : {
+
+    },
+    "Permanently Delete Your Account" : {
+
+    },
+    "Personal Information" : {
+
+    },
     "Profile" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -88,6 +133,9 @@
           }
         }
       }
+    },
+    "Repeat your Password" : {
+
     },
     "Scan" : {
       "extractionState" : "manual",
@@ -100,6 +148,15 @@
         }
       }
     },
+    "Show Password" : {
+
+    },
+    "Show Welcome" : {
+
+    },
+    "Sign up" : {
+
+    },
     "Switch to business" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -110,6 +167,12 @@
           }
         }
       }
+    },
+    "This action is irreversible. All data will be permanently removed. For assistance, contact support." : {
+
+    },
+    "This screen will be developed in continues coding sessions" : {
+
     },
     "Your businesses" : {
       "extractionState" : "manual",
