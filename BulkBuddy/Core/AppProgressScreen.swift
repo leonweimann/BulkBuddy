@@ -12,7 +12,7 @@ import SwiftUI
 struct AppProgressScreen: View {
     // MARK: Config
     var animationSpeed = 0.2
-    var contentImages = ["qrcode.viewfinder", /*"barcode.viewfinder",*/ "creditcard.viewfinder"]
+    var contentImages = ["qrcode.viewfinder", "barcode.viewfinder", "creditcard.viewfinder"]
     static private let loaderTitle = Array("BulkBuddy")
     
     // MARK: Animation
@@ -71,20 +71,14 @@ struct AppProgressScreen: View {
     }
     
     private var appIconCartContent: some View {
-        HStack(spacing: 0) {
-            ForEach(contentImages, id: \.self) { systemName in
-                cartItemCell(systemName: systemName)
-            }
-        }
-    }
-    
-    private func cartItemCell(systemName: String) -> some View {
-        Image(systemName: systemName)
+        Image(systemName: contentImages[currentAppIconCartContentIndex])
             .resizable()
             .aspectRatio(contentMode: .fit)
             .foregroundStyle(.white)
             .fontWeight(.semibold)
             .padding(4)
+            .clipped()
+            .contentTransition(.symbolEffect)
     }
     
     private var appNameText: some View {
@@ -123,6 +117,8 @@ struct AppProgressScreen: View {
     private var currentBouncedChar: Int? { loadingIndication.firstIndex(of: true) }
     
     private var showAdditionalLoadingIndicator: Bool { animationPeriod > 2 }
+    
+    private var currentAppIconCartContentIndex: Int { animationPeriod % contentImages.count }
     
     // MARK: Animation Logic
     private var additionalLoadingIndicatorContent: String {
