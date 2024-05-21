@@ -12,16 +12,22 @@ import SwiftUI
 // MARK: - AccountSettingsView
 
 struct AccountSettingsView: View {
+    init(user: User = .mock) {
+        self._user = .init(initialValue: user)
+    }
+    
     @Environment(AppViewModel.self) private var viewModel
     
     // MARK: Properties
     
-    var user: User = User.mock
+    @State private var user: User
     
     // MARK: Visual
     
     var body: some View {
         Form {
+            contactInformations
+            
             deleteUserSection
         }
         .navigationTitle(user.name)
@@ -37,6 +43,19 @@ struct AccountSettingsView: View {
             } label: {
                 Label("More", systemImage: "ellipsis.circle")
             }
+        }
+    }
+    
+    private var contactInformations: some View {
+        Section("Contact Information") {
+            ConvenienceTextField(
+                titleKey: "eMail",
+                text: $user.email,
+                isFocused: nil,
+                validContentSymbol: "checkmark",
+                isContentValid: isEmailContentValid,
+                onSubmit: nil
+            )
         }
     }
     
@@ -61,6 +80,8 @@ struct AccountSettingsView: View {
     private func copyUserID() {
         // TODO: Implementation
     }
+    
+    private func isEmailContentValid(_ email: String) -> Bool { email.isValidEmail }
     
     private func requestDeleteAccount() {
         viewModel.router.showAlert(
