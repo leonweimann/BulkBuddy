@@ -32,7 +32,7 @@ final class AppViewModel {
     var router: AnyRouter
     
     /// Route to **WelcomeView**.
-    static var WelcomeRoute = AnyRoute(.fullScreenCover) { _ in
+    static let WelcomeRoute = AnyRoute(.fullScreenCover) { _ in
         NavigationView {
             WelcomeView()
         }
