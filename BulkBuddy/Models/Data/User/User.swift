@@ -29,7 +29,7 @@ struct User: FirestoreData {
         id: "user01",
         name: "John Doe",
         email: "john.doe@example.com",
-        phoneNumber: "123-456-7890",
+        phoneNumber: "+49 159 4057395",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/IJustine_2015.jpg/640px-IJustine_2015.jpg",
         birthDate: Date(),
         info: "Loyal customer",
