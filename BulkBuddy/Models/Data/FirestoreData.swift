@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - FirestoreData
 
-protocol FirestoreData: Identifiable, Equatable, Codable {
+protocol FirestoreData: Identifiable, Codable {
     static var _collectionPath: String { get }
 }
 
@@ -18,8 +18,6 @@ protocol FirestoreData: Identifiable, Equatable, Codable {
 extension FirestoreData {
     var collectionPath: String { Self._collectionPath }
     var documentPath: String { String(describing: id) }
-    
-    static func == (lhs: Self, rhs: Self) -> Bool { lhs.id == rhs.id }
     
     func firestoreDocumentData() throws -> [String : Any] {
         let data = try JSONEncoder().encode(self)

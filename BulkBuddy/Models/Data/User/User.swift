@@ -25,8 +25,6 @@ struct User: FirestoreData {
     var family: UserFamily
     var starredBusinesses: Set<Business.ID>
     
-    static func == (lhs: User, rhs: User) -> Bool { lhs.id == rhs.id }
-    
     static let mock = User(
         id: "user01",
         name: "John Doe",
