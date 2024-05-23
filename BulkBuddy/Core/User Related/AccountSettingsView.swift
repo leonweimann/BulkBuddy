@@ -80,8 +80,8 @@ struct AccountSettingsView: View {
     }
     
     private var contactInformation: some View {
-        Section("Contact Information") {
-            IconContentCell(icon: "envelope", color: .blue) {
+        ValidatableSection("Contact Information") { _ in
+            ValidatableCell("envelope", color: .blue, validationContent: user.email, issue: userEmailIssue) {
                 ConvenienceTextField(
                     titleKey: "eMail",
                     text: $user.email,
@@ -92,7 +92,7 @@ struct AccountSettingsView: View {
             .textContentType(.emailAddress)
             .keyboardType(.emailAddress)
             
-            IconContentCell(icon: "phone", color: .green) {
+            ValidatableCell("phone", color: .green, validationContent: user.phoneNumber, issue: userPhoneNumberIssue) {
                 ConvenienceTextField(
                     titleKey: "Phone number (\(User.mock.phoneNumber))",
                     text: $user.phoneNumber,
@@ -109,8 +109,8 @@ struct AccountSettingsView: View {
     
     @ViewBuilder
     private var personalInformation: some View {
-        Section("Personal Information") {
-            IconContentCell(icon: "person", color: .indigo) {
+        ValidatableSection("Personal Information") { _ in
+            ValidatableCell("person", color: .indigo, validationContent: user.name, issue: userNameIssue) {
                 ConvenienceTextField(
                     titleKey: "Name",
                     text: $user.name
@@ -118,7 +118,7 @@ struct AccountSettingsView: View {
             }
             .textContentType(.name)
             
-            IconContentCell(icon: "person.text.rectangle", color: .purple) {
+            ValidatableCell("person.text.rectangle", color: .purple, validationContent: user.info, issue: userInfoIssue) {
                 ConvenienceTextField(
                     titleKey: "Something about you",
                     text: $user.info
@@ -128,8 +128,8 @@ struct AccountSettingsView: View {
         .autocorrectionDisabled()
         .textInputAutocapitalization(.never)
         
-        Section {
-            IconContentCell(icon: "calendar", color: .red) {
+        ValidatableSection { _ in
+            ValidatableCell("calendar", color: .red, validationContent: user.birthDate, issue: userBirthDataIssue) {
                 DatePicker(
                     "Birth date",
                     selection: $user.birthDate,
@@ -138,15 +138,13 @@ struct AccountSettingsView: View {
                 )
             }
             
-            IconContentCell(icon: "photo", color: .pink) {
+            ValidatableCell("photo", color: .pink, validationContent: user.image, issue: userImageIssue) {
                 NavigationLink("Profile image") {
                     WebImagePicker(image: $user.image)
                         .navigationTitle("Profile Image")
                         .toolbarTitleDisplayMode(.inline)
                 }
             }
-        } footer: {
-            optionalBirthDateFooter
         }
     }
     
@@ -189,6 +187,30 @@ struct AccountSettingsView: View {
     private func isEmailContentValid(_ email: String) -> Bool { email.isValidEmail }
     
     private func isPhoneNumberContentValid(_ phoneNumber: String) -> Bool { phoneNumber.isValidPhoneNumber }
+    
+    private func userEmailIssue(_ email: String) -> String? {
+        email.isValidEmail ? nil : "Your eMail isn't valid" // Provide more rich detail
+    }
+    
+    private func userPhoneNumberIssue(_ phoneNumber: String) -> String? {
+        phoneNumber.isValidPhoneNumber ? nil : "Your phone number isn't valid" // Provide more rich detail
+    }
+    
+    private func userNameIssue(_ name: String) -> String? {
+        name.count > 3 ? nil : "Your name is too short" // Provide more rich detail
+    }
+    
+    private func userInfoIssue(_ info: String) -> String? {
+        nil // Provide more rich detail
+    }
+    
+    private func userBirthDataIssue(_ birthDate: Date) -> String? {
+        nil // Provide more rich detail
+    }
+    
+    private func userImageIssue(_ image: String) -> String? {
+        nil // Provide more rich detail
+    }
     
     private func requestDiscardChanges() {
         viewModel.router.showAlert(
