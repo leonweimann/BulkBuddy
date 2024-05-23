@@ -23,7 +23,7 @@ final actor ValidationClient {
     
     static func checkValidity(phoneNumber: String) -> Bool {
         do {
-            return try Regex(#"/^(\+\d{1,2}\s?)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/gm"#).wholeMatch(in: phoneNumber) != nil
+            return try Regex("^\\+?\\d{1,4}[\\s.-]?\\d{3}[\\s.-]?\\d{3}[\\s.-]?\\d{4}$").wholeMatch(in: phoneNumber) != nil
         } catch {
             assertionFailure("Regular Expression for phoneNumber is invalid")
             return false
