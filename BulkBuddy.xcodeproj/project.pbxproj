@@ -16,6 +16,7 @@
 		AB0A553D2BFF801200077271 /* DependencyRelatedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9446D82BFD47DB00A907F2 /* DependencyRelatedContent.swift */; };
 		AB0A553E2BFF801700077271 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */; };
 		AB0A55422BFFBAFE00077271 /* NotificationCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */; };
+		AB0A55452BFFC4A800077271 /* WebImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55442BFFC4A800077271 /* WebImagePicker.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
@@ -87,6 +88,7 @@
 		AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvenienceTextField.swift; sourceTree = "<group>"; };
 		AB02C90C2BF16C9A00A29E49 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCapsule.swift; sourceTree = "<group>"; };
+		AB0A55442BFFC4A800077271 /* WebImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImagePicker.swift; sourceTree = "<group>"; };
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */,
 				AB9446D82BFD47DB00A907F2 /* DependencyRelatedContent.swift */,
 				AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */,
+				AB0A55442BFFC4A800077271 /* WebImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				AB8401592BF00520003AEAF7 /* ScanScreen.swift in Sources */,
 				AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */,
 				AB0A553E2BFF801700077271 /* ProfileScreen.swift in Sources */,
+				AB0A55452BFFC4A800077271 /* WebImagePicker.swift in Sources */,
 				AB0A553D2BFF801200077271 /* DependencyRelatedContent.swift in Sources */,
 				AB4E0A042BA38D810041171C /* FirebaseAuthenticationClient.swift in Sources */,
 				AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */,
