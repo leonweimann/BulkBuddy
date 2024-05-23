@@ -25,6 +25,10 @@ struct User: FirestoreData {
     var family: UserFamily
     var starredBusinesses: Set<Business.ID>
     
+    var age: Int {
+        Calendar.current.dateComponents([.year], from: birthDate, to: .now).year ?? -1
+    }
+    
     static let mock = User(
         id: "user01",
         name: "John Doe",
