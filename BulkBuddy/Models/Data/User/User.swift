@@ -22,7 +22,7 @@ struct User: FirestoreData {
     var balance: Double
     var permission: UserPermissionLevel
     var basket: UserBasket
-    var family: UserFamily
+    var family: UserFamily.ID
     var starredBusinesses: Set<Business.ID>
     
     var age: Int {
@@ -40,7 +40,7 @@ struct User: FirestoreData {
         balance: 150.50,
         permission: .owner,
         basket: UserBasket(),
-        family: UserFamily(),
+        family: UUID().uuidString,
         starredBusinesses: []
     )
     
@@ -55,7 +55,7 @@ struct User: FirestoreData {
         balance: 0,
         permission: .none,
         basket: .init(),
-        family: .init(),
+        family: UUID().uuidString,
         starredBusinesses: []
     )
 }

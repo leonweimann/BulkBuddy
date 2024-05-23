@@ -9,6 +9,8 @@ import Foundation
 
 // MARK: - UserFamily
 
-struct UserFamily: Codable {
+struct UserFamily: FirestoreData {
+    static var _collectionPath: String = "user_families"
     
+    var id: String = UUID().uuidString
 }

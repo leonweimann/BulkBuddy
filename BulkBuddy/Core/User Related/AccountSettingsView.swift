@@ -24,16 +24,28 @@ struct AccountSettingsView: View {
     private let initialUser: User
     @State private var user: User
     
+    // MARK: Computed Properties
+    
+    private var isUserUnchanged: Bool {
+        user.email == initialUser.email &&
+        user.phoneNumber == initialUser.phoneNumber &&
+        user.name == initialUser.name &&
+        user.info == initialUser.info &&
+        user.birthDate == initialUser.birthDate &&
+        user.image == initialUser.image &&
+        user.family == user.family
+    }
+    
     // MARK: Visual
     
     var body: some View {
         Form {
-            contactInformations
+            contactInformation
             
-            personalInfomations
+            personalInformation
             
             Section("Family") {
-                FormField(icon: "figure.and.child.holdinghands", style: .pink.gradient) {
+                FormField(icon: "figure.and.child.holdinghands", style: .cyan.gradient) {
                     NavigationLink("Family") {
                         // TODO: FamilyView
                     }
@@ -47,7 +59,7 @@ struct AccountSettingsView: View {
     }
     
     private var toolbar: some ToolbarContent {
-        ToolbarItem {
+        ToolbarItem(placement: .topBarTrailing) {
             Menu {
                 Button(action: copyUserID) {
                     Label("Copy user id", systemImage: "doc.on.doc")
@@ -57,6 +69,7 @@ struct AccountSettingsView: View {
                     Button(role: .destructive, action: requestDiscardChanges) {
                         Label("Discard your changes", systemImage: "arrow.counterclockwise")
                     }
+                    .disabled(isUserUnchanged)
                 }
                 
                 deleteUserSection
@@ -66,7 +79,7 @@ struct AccountSettingsView: View {
         }
     }
     
-    private var contactInformations: some View {
+    private var contactInformation: some View {
         Section("Contact Information") {
             FormField(icon: "envelope", style: .blue.gradient) {
                 ConvenienceTextField(
@@ -95,7 +108,7 @@ struct AccountSettingsView: View {
     }
     
     @ViewBuilder
-    private var personalInfomations: some View {
+    private var personalInformation: some View {
         Section("Personal Information") {
             FormField(icon: "person", style: .indigo.gradient) {
                 ConvenienceTextField(
@@ -123,6 +136,14 @@ struct AccountSettingsView: View {
                     in: ValidationClient.getValidBirthDateRange(),
                     displayedComponents: .date
                 )
+            }
+            
+            FormField(icon: "photo", style: .pink.gradient) {
+                NavigationLink("Profile Image") {
+                    WebImagePicker(image: $user.image)
+                        .navigationTitle("Profile Image")
+                        .toolbarTitleDisplayMode(.inline)
+                }
             }
         } footer: {
             optionalBirthDateFooter
