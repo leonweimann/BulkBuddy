@@ -40,7 +40,13 @@
         }
       }
     },
+    "Birth date" : {
+
+    },
     "Birth Date" : {
+
+    },
+    "Browse" : {
 
     },
     "BulkBuddy" : {
@@ -56,6 +62,9 @@
           }
         }
       }
+    },
+    "Cancel" : {
+
     },
     "Color scheme" : {
       "extractionState" : "manual",
@@ -74,16 +83,25 @@
     "Contact Information" : {
 
     },
+    "Continue" : {
+
+    },
     "Copy user id" : {
 
     },
     "Create your Account" : {
 
     },
+    "Discard your changes" : {
+
+    },
     "eMail" : {
 
     },
     "Erase %@ from BulkBuddy" : {
+
+    },
+    "Family" : {
 
     },
     "Hello, World!" : {
@@ -101,6 +119,12 @@
       }
     },
     "Home Screen" : {
+
+    },
+    "Image Selection" : {
+
+    },
+    "Key" : {
 
     },
     "Listed Businesses" : {
@@ -135,6 +159,9 @@
     "Phone number (%@)" : {
 
     },
+    "Preview" : {
+
+    },
     "Profile" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -145,6 +172,12 @@
           }
         }
       }
+    },
+    "Profile image" : {
+
+    },
+    "Profile Image" : {
+
     },
     "Repeat your Password" : {
 
@@ -169,6 +202,9 @@
     "Sign up" : {
 
     },
+    "Something about you" : {
+
+    },
     "Switch to business" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -180,10 +216,19 @@
         }
       }
     },
+    "The link / url to the image" : {
+
+    },
     "This action is irreversible. All data will be permanently removed. For assistance, contact support." : {
 
     },
     "This screen will be developed in continues coding sessions" : {
+
+    },
+    "You need to provide a link to the image you want to set. You can simply go to the web and copy on image you like." : {
+
+    },
+    "Your birth date doesn't look right." : {
 
     },
     "Your businesses" : {

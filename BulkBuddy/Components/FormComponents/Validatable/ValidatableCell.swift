@@ -1,5 +1,5 @@
 //
-//  ValidatableSection.swift
+//  ValidatableCell.swift
 //  BulkBuddy
 //
 //  Created by Leon Weimann on 23.05.24.
@@ -7,89 +7,7 @@
 
 import SwiftUI
 
-// MARK: - ValidatableSection
-
-struct ValidatableSection<C>: View where C: View {
-    init(_ title: String, @ViewBuilder content: @escaping (ValidationStageContainer) -> C) {
-        self.title = title
-        self.content = content
-    }
-    
-    private let title: String
-    @ViewBuilder private var content: (ValidationStageContainer) -> C
-    
-    private let container = ValidationStageContainer()
-    
-    var body: some View {
-        Section {
-            content(container)
-        } header: {
-            Text(title)
-        } footer: {
-            if let text = container.footerText {
-                Text(text)
-            }
-        }
-        .environment(container)
-    }
-}
-
-@Observable
-final class ValidationStageContainer {
-    var cellStages = [ValidationCellStage.ID : ValidationCellStage]()
-    
-    func stage(for cellID: ValidationCellStage.ID) -> ValidationCellStage? {
-        cellStages
-            .first { key, _ in
-                key == cellID
-            }?
-            .value
-    }
-    
-    var footerText: String? {
-        guard
-            let stage = cellStages.first(where: { $0.value.invalid })?.value,
-            let issue = stage.issue()
-        else {
-            return nil
-        }
-        
-        return issue
-    }
-    
-    struct ValidationCellStage: Identifiable {
-        var id: String
-        var issue: () -> String?
-        
-        var invalid: Bool { issue() != nil }
-        
-        static func fromIssue(id: String, issue: @escaping () -> String?) -> Self {
-            Self.init(id: id, issue: issue)
-        }
-    }
-}
-
-// MARK: - Preview
-
-#Preview {
-    HandledEnvironment {
-        Form {
-            let user = User.mock
-            
-            ValidatableSection("Test") { container in
-                ValidatableCell(
-                    "envelope",
-                    color: .blue,
-                    validationContent: user.email
-                ) { mail in
-                    mail.count > 5 ? nil : "some issue"
-                } content: {
-                    
-                }
-            }
-        }
-    }
-}
+// MARK: - ValidatableCell
 
 struct ValidatableCell<C, V>: View where C: View, V: Equatable {
     init(
@@ -131,10 +49,12 @@ struct ValidatableCell<C, V>: View where C: View, V: Equatable {
     }
     
     @Environment(ValidationStageContainer.self) private var container
+    
     private let id: String
     
     private let icon: String
     private let color: Color
+    
     private let validationContent: V
     private let validationState: (V) -> ValidationStageContainer.ValidationCellStage
     
@@ -151,6 +71,22 @@ struct ValidatableCell<C, V>: View where C: View, V: Equatable {
         }
         .onChange(of: validationContent) { oldValue, newValue in
             container.cellStages[id] = validationState(newValue)
+        }
+    }
+}
+
+#Preview {
+    HandledEnvironment {
+        Form {
+            let user = User.mock
+            
+            ValidatableSection("Test") { _ in
+                ValidatableCell("envelope", color: .blue, validationContent: user.email) { mail in
+                    mail.count > 5 ? nil : "some issue"
+                } content: {
+                    // some ui
+                }
+            }
         }
     }
 }

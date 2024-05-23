@@ -19,6 +19,8 @@
 		AB0A55452BFFC4A800077271 /* WebImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55442BFFC4A800077271 /* WebImagePicker.swift */; };
 		AB0A554A2BFFD27600077271 /* IconContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55492BFFD27600077271 /* IconContentCell.swift */; };
 		AB0A554C2BFFDA0D00077271 /* ValidatableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */; };
+		AB2963502BFFEEAE007AC2CF /* ValidatableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29634F2BFFEEAE007AC2CF /* ValidatableCell.swift */; };
+		AB2963522BFFEF11007AC2CF /* ValidationStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2963512BFFEF11007AC2CF /* ValidationStageContainer.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
@@ -93,6 +95,8 @@
 		AB0A55442BFFC4A800077271 /* WebImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImagePicker.swift; sourceTree = "<group>"; };
 		AB0A55492BFFD27600077271 /* IconContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconContentCell.swift; sourceTree = "<group>"; };
 		AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableSection.swift; sourceTree = "<group>"; };
+		AB29634F2BFFEEAE007AC2CF /* ValidatableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableCell.swift; sourceTree = "<group>"; };
+		AB2963512BFFEF11007AC2CF /* ValidationStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationStageContainer.swift; sourceTree = "<group>"; };
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -190,11 +194,11 @@
 		AB0A55462BFFD1F600077271 /* FormComponents */ = {
 			isa = PBXGroup;
 			children = (
+				AB29634E2BFFEEA4007AC2CF /* Validatable */,
 				AB0A55492BFFD27600077271 /* IconContentCell.swift */,
 				AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */,
 				AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */,
 				AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */,
-				AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */,
 			);
 			path = FormComponents;
 			sourceTree = "<group>";
@@ -206,6 +210,16 @@
 				AB8401672BF01866003AEAF7 /* ImageLoader.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		AB29634E2BFFEEA4007AC2CF /* Validatable */ = {
+			isa = PBXGroup;
+			children = (
+				AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */,
+				AB29634F2BFFEEAE007AC2CF /* ValidatableCell.swift */,
+				AB2963512BFFEF11007AC2CF /* ValidationStageContainer.swift */,
+			);
+			path = Validatable;
 			sourceTree = "<group>";
 		};
 		AB29D2502BA42C5300489A34 /* Environment */ = {
@@ -623,6 +637,7 @@
 				ABD55BC42BF6A7DF00FCEC4D /* FirestoreError.swift in Sources */,
 				AB84014D2BEFFD6E003AEAF7 /* UserPermissionLevel.swift in Sources */,
 				AB833E832BFB762A005E5DA6 /* AppProgressScreen.swift in Sources */,
+				AB2963522BFFEF11007AC2CF /* ValidationStageContainer.swift in Sources */,
 				ABD55BC12BF6A73100FCEC4D /* FirestoreData.swift in Sources */,
 				AB4E09F72BA3897E0041171C /* User.swift in Sources */,
 				AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */,
@@ -648,6 +663,7 @@
 				AB84016F2BF02FFD003AEAF7 /* AccountSettingsView.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				ABD55BAE2BF6881600FCEC4D /* BulkBuddy.docc in Sources */,
+				AB2963502BFFEEAE007AC2CF /* ValidatableCell.swift in Sources */,
 				AB02C90D2BF16C9A00A29E49 /* AccountModel.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
 				AB02C9052BF14BEC00A29E49 /* ValidationClient.swift in Sources */,
