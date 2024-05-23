@@ -48,7 +48,7 @@ struct ValidatableCell<C, V>: View where C: View, V: Equatable {
         }
     }
     
-    @Environment(ValidationStageContainer.self) private var container
+    @Environment(ValidationStageContainer.self) private var container // TODO: Handle possible issues e.g. no container because dev forgot section...
     
     private let id: String
     

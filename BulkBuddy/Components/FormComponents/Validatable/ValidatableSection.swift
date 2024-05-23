@@ -10,12 +10,12 @@ import SwiftUI
 // MARK: - ValidatableSection
 
 struct ValidatableSection<C>: View where C: View {
-    init(_ title: String, @ViewBuilder content: @escaping (ValidationStageContainer) -> C) {
+    init(_ title: String? = nil, @ViewBuilder content: @escaping (ValidationStageContainer) -> C) {
         self.title = title
         self.content = content
     }
     
-    private let title: String
+    private let title: String?
     @ViewBuilder private var content: (ValidationStageContainer) -> C
     
     private let container = ValidationStageContainer()
@@ -24,7 +24,9 @@ struct ValidatableSection<C>: View where C: View {
         Section {
             content(container)
         } header: {
-            Text(title)
+            if let title {
+                Text(title)
+            }
         } footer: {
             if let text = container.footerText {
                 Text(text)
