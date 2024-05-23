@@ -151,6 +151,7 @@ struct AccountSettingsView: View {
                     Image(systemName: icon)
                         .resizable()
                         .fontWeight(.semibold)
+                        .foregroundStyle(.white)
                         .aspectRatio(contentMode: .fit)
                         .padding(6)
                 }
