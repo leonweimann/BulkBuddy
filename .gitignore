@@ -78,3 +78,6 @@ swiftlint_report.html
 
 # Add this if you are using Xcode 12+
 *.xcscmblueprint
+
+# Ensure Package.resolved is tracked
+!Package.resolved
