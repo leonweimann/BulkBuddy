@@ -60,6 +60,12 @@ final class AppViewModel {
         router.dismissModal(id: "appProgressScreen")
     }
     
+    func showNotificationCapsule(_ title: String, systemImage: String) {
+        router.showModal(transition: .push(from: .top), animation: .snappy, alignment: .top) {
+            NotificationCapsule(title: title, systemImage: systemImage)
+        }
+    }
+    
     func updateUser(_ newUser: User?) {
         self.currentUser = newUser
     }
