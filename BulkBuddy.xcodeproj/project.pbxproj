@@ -17,6 +17,7 @@
 		AB0A553E2BFF801700077271 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */; };
 		AB0A55422BFFBAFE00077271 /* NotificationCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */; };
 		AB0A55452BFFC4A800077271 /* WebImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55442BFFC4A800077271 /* WebImagePicker.swift */; };
+		AB0A554A2BFFD27600077271 /* IconContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55492BFFD27600077271 /* IconContentCell.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
@@ -89,6 +90,7 @@
 		AB02C90C2BF16C9A00A29E49 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCapsule.swift; sourceTree = "<group>"; };
 		AB0A55442BFFC4A800077271 /* WebImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImagePicker.swift; sourceTree = "<group>"; };
+		AB0A55492BFFD27600077271 /* IconContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconContentCell.swift; sourceTree = "<group>"; };
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -183,6 +185,26 @@
 			path = Internal;
 			sourceTree = "<group>";
 		};
+		AB0A55462BFFD1F600077271 /* FormComponents */ = {
+			isa = PBXGroup;
+			children = (
+				AB0A55492BFFD27600077271 /* IconContentCell.swift */,
+				AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */,
+				AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */,
+				AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */,
+			);
+			path = FormComponents;
+			sourceTree = "<group>";
+		};
+		AB0A55472BFFD20500077271 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AB0A55442BFFC4A800077271 /* WebImagePicker.swift */,
+				AB8401672BF01866003AEAF7 /* ImageLoader.swift */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		AB29D2502BA42C5300489A34 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,13 +287,10 @@
 		AB8401432BEFF775003AEAF7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				AB8401672BF01866003AEAF7 /* ImageLoader.swift */,
-				AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */,
-				AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */,
-				AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */,
 				AB9446D82BFD47DB00A907F2 /* DependencyRelatedContent.swift */,
 				AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */,
-				AB0A55442BFFC4A800077271 /* WebImagePicker.swift */,
+				AB0A55472BFFD20500077271 /* Images */,
+				AB0A55462BFFD1F600077271 /* FormComponents */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -609,6 +628,7 @@
 				AB0A55422BFFBAFE00077271 /* NotificationCapsule.swift in Sources */,
 				ABFF57172BA37E500073DA45 /* ContentView.swift in Sources */,
 				AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */,
+				AB0A554A2BFFD27600077271 /* IconContentCell.swift in Sources */,
 				AB02C9002BF12A3000A29E49 /* AnimatedWelcomeCell.swift in Sources */,
 				AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */,
 				AB02C8FE2BF1256900A29E49 /* WelcomeView.swift in Sources */,

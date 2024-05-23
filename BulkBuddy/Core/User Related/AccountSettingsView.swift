@@ -45,7 +45,7 @@ struct AccountSettingsView: View {
             personalInformation
             
             Section("Family") {
-                FormField(icon: "figure.and.child.holdinghands", style: .cyan.gradient) {
+                IconContentCell(icon: "figure.and.child.holdinghands", color: .cyan) {
                     NavigationLink("Family") {
                         // TODO: FamilyView
                     }
@@ -81,7 +81,7 @@ struct AccountSettingsView: View {
     
     private var contactInformation: some View {
         Section("Contact Information") {
-            FormField(icon: "envelope", style: .blue.gradient) {
+            IconContentCell(icon: "envelope", color: .blue) {
                 ConvenienceTextField(
                     titleKey: "eMail",
                     text: $user.email,
@@ -92,7 +92,7 @@ struct AccountSettingsView: View {
             .textContentType(.emailAddress)
             .keyboardType(.emailAddress)
             
-            FormField(icon: "phone", style: .green.gradient) {
+            IconContentCell(icon: "phone", color: .green) {
                 ConvenienceTextField(
                     titleKey: "Phone number (\(User.mock.phoneNumber))",
                     text: $user.phoneNumber,
@@ -110,7 +110,7 @@ struct AccountSettingsView: View {
     @ViewBuilder
     private var personalInformation: some View {
         Section("Personal Information") {
-            FormField(icon: "person", style: .indigo.gradient) {
+            IconContentCell(icon: "person", color: .indigo) {
                 ConvenienceTextField(
                     titleKey: "Name",
                     text: $user.name
@@ -118,7 +118,7 @@ struct AccountSettingsView: View {
             }
             .textContentType(.name)
             
-            FormField(icon: "person.text.rectangle", style: .purple.gradient) {
+            IconContentCell(icon: "person.text.rectangle", color: .purple) {
                 ConvenienceTextField(
                     titleKey: "Something about you",
                     text: $user.info
@@ -129,7 +129,7 @@ struct AccountSettingsView: View {
         .textInputAutocapitalization(.never)
         
         Section {
-            FormField(icon: "calendar", style: .red.gradient) {
+            IconContentCell(icon: "calendar", color: .red) {
                 DatePicker(
                     "Birth date",
                     selection: $user.birthDate,
@@ -138,7 +138,7 @@ struct AccountSettingsView: View {
                 )
             }
             
-            FormField(icon: "photo", style: .pink.gradient) {
+            IconContentCell(icon: "photo", color: .pink) {
                 NavigationLink("Profile Image") {
                     WebImagePicker(image: $user.image)
                         .navigationTitle("Profile Image")
@@ -160,25 +160,6 @@ struct AccountSettingsView: View {
                 
                 Text("Your birth date doesn't look right.")
             }
-        }
-    }
-    
-    private func FormField<S, C>(icon: String, style: S, @ViewBuilder content: @escaping () -> C) -> some View where S: ShapeStyle, C: View {
-        HStack(alignment: .center, spacing: 12) {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(style)
-                .aspectRatio(1, contentMode: .fit)
-                .overlay {
-                    Image(systemName: icon)
-                        .resizable()
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-                        .aspectRatio(contentMode: .fit)
-                        .padding(6)
-                }
-                .frame(width: 32, height: 32)
-            
-            content()
         }
     }
     
