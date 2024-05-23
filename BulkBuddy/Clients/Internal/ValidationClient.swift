@@ -40,9 +40,19 @@ final actor ValidationClient {
     }
     
     static func checkValidity(birthDate: Date) -> Bool {
-        let ageComponents = Calendar.current.dateComponents([.year], from: birthDate, to: .now)
-        guard let age = ageComponents.year else { return false }
-        return (1..<120).contains(age)
+        getValidBirthDateRange().contains(birthDate)
+    }
+    
+    static func getValidBirthDateRange() -> ClosedRange<Date> {
+        let calendar = Calendar.current
+        guard
+            let upperBound = calendar.date(byAdding: .year, value: -1, to: .now),
+            let lowerBound = calendar.date(byAdding: .year, value: -120, to: .now)
+        else {
+            assertionFailure("Calculating dates failed")
+            return Date.now...Date.now
+        }
+        return lowerBound...upperBound
     }
 }
 
