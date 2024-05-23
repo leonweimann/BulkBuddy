@@ -60,9 +60,14 @@ final class AppViewModel {
         router.dismissModal(id: "appProgressScreen")
     }
     
-    func showNotificationCapsule(_ title: String, systemImage: String) {
-        router.showModal(transition: .push(from: .top), animation: .snappy, alignment: .top) {
+    func showNotificationCapsule(_ title: String, systemImage: String, duration: Duration = .seconds(2)) {
+        router.showModal(id: "notificationCapsule", transition: .push(from: .top), animation: .snappy, alignment: .top, ignoreSafeArea: false) {
             NotificationCapsule(title: title, systemImage: systemImage)
+        }
+        
+        Task {
+            try? await Task.sleep(for: duration)
+            router.dismissModal(id: "notificationCapsule") // ISSUE: Without animation -> check in framework why
         }
     }
     
