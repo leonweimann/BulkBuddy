@@ -139,7 +139,7 @@ struct AccountSettingsView: View {
             }
             
             IconContentCell(icon: "photo", color: .pink) {
-                NavigationLink("Profile Image") {
+                NavigationLink("Profile image") {
                     WebImagePicker(image: $user.image)
                         .navigationTitle("Profile Image")
                         .toolbarTitleDisplayMode(.inline)

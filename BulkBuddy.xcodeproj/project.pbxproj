@@ -18,6 +18,7 @@
 		AB0A55422BFFBAFE00077271 /* NotificationCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */; };
 		AB0A55452BFFC4A800077271 /* WebImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55442BFFC4A800077271 /* WebImagePicker.swift */; };
 		AB0A554A2BFFD27600077271 /* IconContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A55492BFFD27600077271 /* IconContentCell.swift */; };
+		AB0A554C2BFFDA0D00077271 /* ValidatableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
@@ -91,6 +92,7 @@
 		AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCapsule.swift; sourceTree = "<group>"; };
 		AB0A55442BFFC4A800077271 /* WebImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebImagePicker.swift; sourceTree = "<group>"; };
 		AB0A55492BFFD27600077271 /* IconContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconContentCell.swift; sourceTree = "<group>"; };
+		AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatableSection.swift; sourceTree = "<group>"; };
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */,
 				AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */,
 				AB02C8FF2BF12A3000A29E49 /* AnimatedWelcomeCell.swift */,
+				AB0A554B2BFFDA0D00077271 /* ValidatableSection.swift */,
 			);
 			path = FormComponents;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				AB8401682BF01866003AEAF7 /* ImageLoader.swift in Sources */,
 				AB0A554A2BFFD27600077271 /* IconContentCell.swift in Sources */,
 				AB02C9002BF12A3000A29E49 /* AnimatedWelcomeCell.swift in Sources */,
+				AB0A554C2BFFDA0D00077271 /* ValidatableSection.swift in Sources */,
 				AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */,
 				AB02C8FE2BF1256900A29E49 /* WelcomeView.swift in Sources */,
 				AB84016D2BF0250D003AEAF7 /* TeaserCell.swift in Sources */,
