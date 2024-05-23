@@ -82,6 +82,7 @@ struct ConvenienceTextField: View {
                 .offset(x: isContentValidWrapped ? 100 : 0)
                 .opacity(!text.isEmpty && showOverlay ? 1 : 0)
         }
+        .animation(.bouncy, value: isContentValidWrapped)
         .onAppear(perform: handleAppear)
         .onChange(of: parentFocusOverride?.wrappedValue) { oldValue, newValue in
             if let newValue {
