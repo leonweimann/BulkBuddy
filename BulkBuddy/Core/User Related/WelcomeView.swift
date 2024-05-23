@@ -26,6 +26,7 @@ struct WelcomeView: View {
             ConvenienceTextField(
                 titleKey: "eMail",
                 text: $model.email,
+                focusDependentOverlays: false,
                 isContentValid: isEmailContentValidHandler,
                 onSubmit: onMailSubmission
             )
