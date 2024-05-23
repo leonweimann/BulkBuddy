@@ -15,15 +15,14 @@ struct ValidatableSection<C>: View where C: View {
         self.content = content
     }
     
-    var title: String
-    @ViewBuilder var content: (ValidationStageContainer) -> C
+    private let title: String
+    @ViewBuilder private var content: (ValidationStageContainer) -> C
     
-    private var container = ValidationStageContainer()
+    private let container = ValidationStageContainer()
     
     var body: some View {
         Section {
             content(container)
-                .environment(container)
         } header: {
             Text(title)
         } footer: {
@@ -31,6 +30,7 @@ struct ValidatableSection<C>: View where C: View {
                 Text(text)
             }
         }
+        .environment(container)
     }
 }
 
@@ -56,13 +56,17 @@ final class ValidationStageContainer {
         
         return issue
     }
-}
-
-struct ValidationCellStage: Identifiable {
-    var id = UUID().uuidString
-    var issue: () -> String?
     
-    var invalid: Bool { issue() != nil }
+    struct ValidationCellStage: Identifiable {
+        var id: String
+        var issue: () -> String?
+        
+        var invalid: Bool { issue() != nil }
+        
+        static func fromIssue(id: String, issue: @escaping () -> String?) -> Self {
+            Self.init(id: id, issue: issue)
+        }
+    }
 }
 
 // MARK: - Preview
@@ -78,9 +82,7 @@ struct ValidationCellStage: Identifiable {
                     color: .blue,
                     validationContent: user.email
                 ) { mail in
-                    return .init {
-                        return nil
-                    }
+                    mail.count > 5 ? nil : "some issue"
                 } content: {
                     
                 }
@@ -94,9 +96,10 @@ struct ValidatableCell<C, V>: View where C: View, V: Equatable {
         _ icon: String,
         color: Color,
         validationContent: V,
-        validationState: @escaping (V) -> ValidationCellStage,
+        validationState: @escaping (V) -> ValidationStageContainer.ValidationCellStage,
         @ViewBuilder content: @escaping () -> C
     ) {
+        self.id = UUID().uuidString
         self.icon = icon
         self.color = color
         self.validationContent = validationContent
@@ -108,31 +111,36 @@ struct ValidatableCell<C, V>: View where C: View, V: Equatable {
         _ icon: String,
         color: Color,
         validationContent: V,
-        issues: @escaping (V) -> String?,
+        issue: @escaping (V) -> String?,
         @ViewBuilder content: @escaping () -> C
     ) {
+        self.id = UUID().uuidString
         self.icon = icon
         self.color = color
         self.validationContent = validationContent
-        self.validationState = { vc in
-            ValidationCellStage { issues(vc) }
-        }
+        self.validationState = ValidatableCell<C, V>.configureValidationState(id: id, issue: issue)
         self.content = content
     }
     
-    @Environment(ValidationStageContainer.self) private var container
-    private let id = UUID().uuidString
-    
-    var icon: String
-    var color: Color
-    var validationContent: V
-    var validationState: (V) -> ValidationCellStage
-    
-    @ViewBuilder var content: () -> C
-    
-    private var showIssue: Bool {
-        validationState(validationContent).invalid
+    static func configureValidationState(id: String, issue: @escaping (V) -> String?) -> ((V) -> ValidationStageContainer.ValidationCellStage) {
+        return { value in
+            ValidationStageContainer.ValidationCellStage.fromIssue(id: id) {
+                issue(value)
+            }
+        }
     }
+    
+    @Environment(ValidationStageContainer.self) private var container
+    private let id: String
+    
+    private let icon: String
+    private let color: Color
+    private let validationContent: V
+    private let validationState: (V) -> ValidationStageContainer.ValidationCellStage
+    
+    @ViewBuilder private var content: () -> C
+    
+    private var showIssue: Bool { validationState(validationContent).invalid }
     
     var body: some View {
         IconContentCell(
