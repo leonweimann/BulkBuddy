@@ -44,32 +44,6 @@ struct AccountSettingsView: View {
         }
         .navigationTitle(user.name)
         .toolbar { toolbar }
-            viewModel.router.showModal(transition: .push(from: .top), animation: .snappy, alignment: .top, dismissOnBackgroundTap: true, ignoreSafeArea: false) {
-                VStack(spacing: 64) {
-                    ZStack {
-                        Capsule()
-                            .fill(.background)
-                            .shadow(color: .primary.opacity(0.4), radius: 4)
-                        
-                        Label("Copied to Clipboard", systemImage: "doc.on.clipboard")
-                            .font(.footnote)
-                            .fontWeight(.medium)
-                    }
-                    .frame(width: 200, height: 48)
-                    .padding()
-                    
-                    Label("Copied to Clipboard", systemImage: "doc.on.clipboard")
-                        .font(.footnote)
-                        .fontWeight(.medium)
-                        .frame(height: 48)
-                        .padding(.horizontal, 32)
-                        .background {
-                            Capsule()
-                                .fill(.background)
-                                .shadow(color: .primary.opacity(0.4), radius: 4)
-                        }
-                }
-            }
     }
     
     private var toolbar: some ToolbarContent {
@@ -207,7 +181,7 @@ struct AccountSettingsView: View {
     
     private func copyUserID() {
         UIPasteboard.general.string = user.id
-        // show quick confirmation modal
+        viewModel.showNotificationCapsule("Copied to Clipboard", systemImage: "doc.on.clipboard")
     }
     
     private func isEmailContentValid(_ email: String) -> Bool { email.isValidEmail }
