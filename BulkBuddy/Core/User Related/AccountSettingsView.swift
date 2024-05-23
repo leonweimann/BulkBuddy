@@ -12,7 +12,8 @@ import SwiftUI
 // MARK: - AccountSettingsView
 
 struct AccountSettingsView: View {
-    init(user: User = .mock) {
+    init(user: User) {
+        self.initialUser = user
         self._user = .init(initialValue: user)
     }
     
@@ -20,6 +21,7 @@ struct AccountSettingsView: View {
     
     // MARK: Properties
     
+    private let initialUser: User
     @State private var user: User
     
     // MARK: Visual
@@ -27,6 +29,16 @@ struct AccountSettingsView: View {
     var body: some View {
         Form {
             contactInformations
+            
+            personalInfomations
+            
+            Section("Family") {
+                FormField(icon: "figure.and.child.holdinghands", style: .pink.gradient) {
+                    NavigationLink("Family") {
+                        
+                    }
+                }
+            }
             
             deleteUserSection
         }
@@ -40,6 +52,14 @@ struct AccountSettingsView: View {
                 Button(action: copyUserID) {
                     Label("Copy user id", systemImage: "doc.on.doc")
                 }
+                
+                Section {
+                    Button(role: .destructive, action: requestDiscardChanges) {
+                        Label("Discard your changes", systemImage: "arrow.counterclockwise")
+                    }
+                }
+                
+                deleteUserSection
             } label: {
                 Label("More", systemImage: "ellipsis.circle")
             }
@@ -48,14 +68,95 @@ struct AccountSettingsView: View {
     
     private var contactInformations: some View {
         Section("Contact Information") {
-            ConvenienceTextField(
-                titleKey: "eMail",
-                text: $user.email,
-                isFocused: nil,
-                validContentSymbol: "checkmark",
-                isContentValid: isEmailContentValid,
-                onSubmit: nil
-            )
+            FormField(icon: "envelope", style: .blue.gradient) {
+                ConvenienceTextField(
+                    titleKey: "eMail",
+                    text: $user.email,
+                    validContentSymbol: "checkmark",
+                    isContentValid: isEmailContentValid
+                )
+            }
+            .textContentType(.emailAddress)
+            .keyboardType(.emailAddress)
+            
+            FormField(icon: "phone", style: .green.gradient) {
+                ConvenienceTextField(
+                    titleKey: "Phone number (\(User.mock.phoneNumber))",
+                    text: $user.phoneNumber,
+                    validContentSymbol: "checkmark",
+                    isContentValid: isPhoneNumberContentValid
+                )
+            }
+            .textContentType(.telephoneNumber)
+            .keyboardType(.numberPad)
+        }
+        .autocorrectionDisabled()
+        .textInputAutocapitalization(.never)
+    }
+    
+    @ViewBuilder
+    private var personalInfomations: some View {
+        Section("Personal Information") {
+            FormField(icon: "person", style: .indigo.gradient) {
+                ConvenienceTextField(
+                    titleKey: "Name",
+                    text: $user.name
+                )
+            }
+            .textContentType(.name)
+            
+            FormField(icon: "person.text.rectangle", style: .purple.gradient) {
+                ConvenienceTextField(
+                    titleKey: "Something about you",
+                    text: $user.info
+                )
+            }
+        }
+        .autocorrectionDisabled()
+        .textInputAutocapitalization(.never)
+        
+        Section {
+            FormField(icon: "calendar", style: .red.gradient) {
+                DatePicker(
+                    "Birth date",
+                    selection: $user.birthDate,
+                    in: ValidationClient.getValidBirthDateRange(),
+                    displayedComponents: .date
+                )
+            }
+        } footer: {
+            optionalBirthDateFooter
+        }
+    }
+    
+    @ViewBuilder
+    private var optionalBirthDateFooter: some View {
+        if !user.birthDate.isValidAge {
+            HStack {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .foregroundStyle(.red)
+                    .fontWeight(.bold)
+                
+                Text("Your birth date doesn't look right.")
+            }
+        }
+    }
+    
+    private func FormField<S, C>(icon: String, style: S, @ViewBuilder content: @escaping () -> C) -> some View where S: ShapeStyle, C: View {
+        HStack(alignment: .center, spacing: 12) {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(style)
+                .aspectRatio(1, contentMode: .fit)
+                .overlay {
+                    Image(systemName: icon)
+                        .resizable()
+                        .fontWeight(.semibold)
+                        .aspectRatio(contentMode: .fit)
+                        .padding(6)
+                }
+                .frame(width: 32, height: 32)
+            
+            content()
         }
     }
     
@@ -78,10 +179,32 @@ struct AccountSettingsView: View {
     // MARK: Logic
     
     private func copyUserID() {
-        // TODO: Implementation
+        UIPasteboard.general.string = user.id
+        // show quick confirmation modal
     }
     
     private func isEmailContentValid(_ email: String) -> Bool { email.isValidEmail }
+    
+    private func isPhoneNumberContentValid(_ phoneNumber: String) -> Bool { phoneNumber.isValidPhoneNumber }
+    
+    private func requestDiscardChanges() {
+        viewModel.router.showAlert(
+            .alert,
+            title: "Discard all your changes"
+        ) {
+            Button(role: .destructive, action: handleDiscardChanges) {
+                Text("Continue")
+            }
+            
+            Button(role: .cancel, action: {}) {
+                Text("Cancel")
+            }
+        }
+    }
+    
+    private func handleDiscardChanges() {
+        user = initialUser
+    }
     
     private func requestDeleteAccount() {
         viewModel.router.showAlert(
@@ -104,6 +227,6 @@ struct AccountSettingsView: View {
 
 #Preview {
     HandledEnvironment {
-        AccountSettingsView()
+        AccountSettingsView(user: .mock)
     }
 }

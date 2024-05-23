@@ -71,6 +71,12 @@
     "Confirm" : {
 
     },
+    "Contact Information" : {
+
+    },
+    "Copy user id" : {
+
+    },
     "Create your Account" : {
 
     },
@@ -108,6 +114,9 @@
         }
       }
     },
+    "Missing dependency `'%@'`" : {
+
+    },
     "More" : {
 
     },
@@ -121,6 +130,9 @@
 
     },
     "Personal Information" : {
+
+    },
+    "Phone number (%@)" : {
 
     },
     "Profile" : {
