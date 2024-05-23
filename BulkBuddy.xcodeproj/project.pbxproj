@@ -13,6 +13,8 @@
 		AB02C9072BF1565000A29E49 /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C9062BF1565000A29E49 /* CreateAccountScreen.swift */; };
 		AB02C9092BF1592300A29E49 /* ConvenienceTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C9082BF1592300A29E49 /* ConvenienceTextField.swift */; };
 		AB02C90D2BF16C9A00A29E49 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB02C90C2BF16C9A00A29E49 /* AccountModel.swift */; };
+		AB0A553D2BFF801200077271 /* DependencyRelatedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9446D82BFD47DB00A907F2 /* DependencyRelatedContent.swift */; };
+		AB0A553E2BFF801700077271 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84015C2BF00555003AEAF7 /* ProfileScreen.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
@@ -584,8 +586,9 @@
 				AB4E0A092BA391F00041171C /* DependencyInjectionContainer.swift in Sources */,
 				AB84014F2BEFFD85003AEAF7 /* UserFamily.swift in Sources */,
 				AB8401592BF00520003AEAF7 /* ScanScreen.swift in Sources */,
-				AB9446D72BFD404A00A907F2 /* ProfileScreen.swift in Sources */,
 				AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */,
+				AB0A553E2BFF801700077271 /* ProfileScreen.swift in Sources */,
+				AB0A553D2BFF801200077271 /* DependencyRelatedContent.swift in Sources */,
 				AB4E0A042BA38D810041171C /* FirebaseAuthenticationClient.swift in Sources */,
 				AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */,
 				ABD55BC42BF6A7DF00FCEC4D /* FirestoreError.swift in Sources */,
@@ -613,7 +616,6 @@
 				AB84016F2BF02FFD003AEAF7 /* AccountSettingsView.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				ABD55BAE2BF6881600FCEC4D /* BulkBuddy.docc in Sources */,
-				AB9446D92BFD47DB00A907F2 /* DependencyRelatedContent.swift in Sources */,
 				AB02C90D2BF16C9A00A29E49 /* AccountModel.swift in Sources */,
 				AB4E09FE2BA38B310041171C /* Product.swift in Sources */,
 				AB02C9052BF14BEC00A29E49 /* ValidationClient.swift in Sources */,
