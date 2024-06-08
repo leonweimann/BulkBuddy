@@ -15,6 +15,7 @@ struct ProfileScreen: View {
     @Environment(\.router) private var router
     
     var user: User = .mock
+    @State private var saveUserLogic: (() -> Void)? = nil
     
     var body: some View {
         List {
@@ -80,9 +81,13 @@ struct ProfileScreen: View {
     }
     
     private func showAccountSettingsView() {
-        router.showScreen(.push) { _ in
-            AccountSettingsView(user: user)
+        router.showScreen(.push, onDismiss: saveUserLogic) { _ in
+            AccountSettingsView(user: user, saveLogicAdaption: attachSaveUserLogic)
         }
+    }
+    
+    private func attachSaveUserLogic(saveUserLogic: @escaping () -> Void) {
+        self.saveUserLogic = saveUserLogic
     }
 }
 

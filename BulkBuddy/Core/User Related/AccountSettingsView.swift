@@ -12,15 +12,17 @@ import SwiftUI
 // MARK: - AccountSettingsView
 
 struct AccountSettingsView: View {
-    init(user: User) {
+    init(user: User, saveLogicAdaption: @escaping (@escaping () -> Void) -> Void = { _ in }) {
         self.initialUser = user
         self._user = .init(initialValue: user)
+        self.saveLogicAdaption = saveLogicAdaption
     }
     
     @Environment(AppViewModel.self) private var viewModel
     
     // MARK: Properties
     
+    private let saveLogicAdaption: (@escaping () -> Void) -> Void
     private let initialUser: User
     @State private var user: User
     
@@ -56,6 +58,7 @@ struct AccountSettingsView: View {
         }
         .navigationTitle(user.name)
         .toolbar { toolbar }
+        .onFirstAppear(perform: adaptSaveLogic)
     }
     
     private var toolbar: some ToolbarContent {
@@ -66,11 +69,15 @@ struct AccountSettingsView: View {
                 }
                 
                 Section {
+                    Button(action: saveChanges) {
+                        Label("Save changes", systemImage: "square.and.arrow.down")
+                    }
+                    
                     Button(role: .destructive, action: requestDiscardChanges) {
                         Label("Discard your changes", systemImage: "arrow.counterclockwise")
                     }
-                    .disabled(isUserUnchanged)
                 }
+                .disabled(isUserUnchanged)
                 
                 deleteUserSection
             } label: {
@@ -210,6 +217,15 @@ struct AccountSettingsView: View {
     
     private func userImageIssue(_ image: String) -> String? {
         nil // Provide more rich detail
+    }
+    
+    private func adaptSaveLogic() {
+        saveLogicAdaption(saveChanges)
+    }
+    
+    private func saveChanges() {
+        // TODO: Implementation
+        viewModel.updateUser(user)
     }
     
     private func requestDiscardChanges() {

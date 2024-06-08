@@ -73,6 +73,7 @@ final class AppViewModel {
     
     func updateUser(_ newUser: User?) {
         self.currentUser = newUser
+        // TODO: Push / Pull data to / from database
     }
     
     func pullUserData() async {
