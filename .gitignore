@@ -76,4 +76,4 @@ swiftlint_report.html
 *.xcscmblueprint
 
 # GoogleService-Info.plist
-BulkBuddy/BulkBuddy/GoogleService-Info.plist
+GoogleService-Info.plist
