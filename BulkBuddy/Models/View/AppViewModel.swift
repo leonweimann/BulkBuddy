@@ -52,12 +52,22 @@ final class AppViewModel {
     
     static func createFrom(appState: ApplicationState, with router: AnyRouter) -> AppViewModel { AppViewModel(state: appState, router: router) }
     
+    // Routing
+    
     func handledEnvironment<C>(@ViewBuilder content: @escaping () -> C) -> some View where C: View {
         HandledEnvironment(appState: applicationState) {
             content()
         }
         .environment(self)
         .environment(\.router, router)
+    }
+    
+    func showScreenHandled<C>(_ option: SegueOption = .push, onDismiss: (() -> Void)? = nil, @ViewBuilder destination: @escaping () -> C) where C: View {
+        router.showScreen(option, onDismiss: onDismiss) { [self] _ in
+            handledEnvironment {
+                destination()
+            }
+        }
     }
     
     func inceptLoading() {
@@ -82,6 +92,8 @@ final class AppViewModel {
             router.dismissModal(id: "notificationCapsule") // ISSUE: Without animation -> check in framework why
         }
     }
+    
+    // User
     
     func updateUser(_ newUser: User?) {
         self.currentUser = newUser

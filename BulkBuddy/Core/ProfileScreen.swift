@@ -71,7 +71,7 @@ struct ProfileScreen: View {
     }
     
     private func switchToBusiness() {
-        viewModel.router.showScreen(.fullScreenCover) { _ in
+        viewModel.showScreenHandled(.fullScreenCover) {
             ContentUnavailableView(
                 "Business View",
                 systemImage: "clock.badge.exclamationmark",
@@ -81,10 +81,8 @@ struct ProfileScreen: View {
     }
     
     private func showAccountSettingsView() {
-        viewModel.router.showScreen(.push, onDismiss: saveUserLogic) { _ in
-            viewModel.handledEnvironment {
-                AccountSettingsView(user: user, saveLogicAdaption: attachSaveUserLogic)
-            }
+        viewModel.showScreenHandled(.push, onDismiss: saveUserLogic) {
+            AccountSettingsView(user: user, saveLogicAdaption: attachSaveUserLogic)
         }
     }
     
