@@ -1,7 +1,3 @@
-# Xcode .gitignore
-# This is a basic template for Xcode projects
-# which covers the majority of files and paths you'll want to ignore.
-
 ### Xcode ###
 # Xcode user settings
 xcuserdata/
@@ -79,5 +75,5 @@ swiftlint_report.html
 # Add this if you are using Xcode 12+
 *.xcscmblueprint
 
-# Ensure Package.resolved is tracked
-!Package.resolved
+# GoogleService-Info.plist
+BulkBuddy/BulkBuddy/GoogleService-Info.plist
