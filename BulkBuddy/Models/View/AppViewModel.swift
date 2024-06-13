@@ -56,6 +56,8 @@ final class AppViewModel {
         HandledEnvironment(appState: applicationState) {
             content()
         }
+        .environment(self)
+        .environment(\.router, router)
     }
     
     func inceptLoading() {
