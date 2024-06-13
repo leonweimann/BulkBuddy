@@ -42,9 +42,11 @@ struct HomeScreen: View {
     
     private func showProfileScreen() {
         viewModel.router.showScreen(.sheet) { _ in
-            DependencyRelatedContent(viewModel.currentUser) { user in
-                NavigationView {
-                    ProfileScreen(user: user)
+            viewModel.handledEnvironment {
+                DependencyRelatedContent(viewModel.currentUser) { user in
+                    NavigationView {
+                        ProfileScreen(user: user)
+                    }
                 }
             }
         }

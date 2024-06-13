@@ -48,6 +48,12 @@ final class AppViewModel {
     
     static func createFrom(appState: ApplicationState, with router: AnyRouter) -> AppViewModel { AppViewModel(state: appState, router: router) }
     
+    func handledEnvironment<C>(@ViewBuilder content: @escaping () -> C) -> some View where C: View {
+        HandledEnvironment(appState: applicationState) {
+            content()
+        }
+    }
+    
     func inceptLoading() {
         router.showModal(id: "appProgressScreen", transition: .push(from: .top), animation: .smooth) {
             HandledEnvironment {

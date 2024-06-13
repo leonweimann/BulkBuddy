@@ -12,7 +12,7 @@ import SwiftUI
 // MARK: - ProfileScreen
 
 struct ProfileScreen: View {
-    @Environment(\.router) private var router
+    @Environment(AppViewModel.self) private var viewModel
     
     var user: User = .mock
     @State private var saveUserLogic: (() -> Void)? = nil
@@ -71,7 +71,7 @@ struct ProfileScreen: View {
     }
     
     private func switchToBusiness() {
-        router.showScreen(.fullScreenCover) { _ in
+        viewModel.router.showScreen(.fullScreenCover) { _ in
             ContentUnavailableView(
                 "Business View",
                 systemImage: "clock.badge.exclamationmark",
@@ -81,8 +81,10 @@ struct ProfileScreen: View {
     }
     
     private func showAccountSettingsView() {
-        router.showScreen(.push, onDismiss: saveUserLogic) { _ in
-            AccountSettingsView(user: user, saveLogicAdaption: attachSaveUserLogic)
+        viewModel.router.showScreen(.push, onDismiss: saveUserLogic) { _ in
+            viewModel.handledEnvironment {
+                AccountSettingsView(user: user, saveLogicAdaption: attachSaveUserLogic)
+            }
         }
     }
     

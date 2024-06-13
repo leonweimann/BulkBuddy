@@ -54,6 +54,7 @@
 		AB971E562BFF71A400B4AC73 /* SwiftfulRouting in Frameworks */ = {isa = PBXBuildFile; productRef = AB971E552BFF71A400B4AC73 /* SwiftfulRouting */; };
 		AB971E582BFF71AC00B4AC73 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AB971E572BFF71AC00B4AC73 /* FirebaseFirestore */; };
 		AB971E5A2BFF71AC00B4AC73 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AB971E592BFF71AC00B4AC73 /* FirebaseFirestoreSwift */; };
+		ABC179122C1B4B81005F9C10 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABC179112C1B4B81005F9C10 /* GoogleService-Info.plist */; };
 		ABD55BAE2BF6881600FCEC4D /* BulkBuddy.docc in Sources */ = {isa = PBXBuildFile; fileRef = ABD55BAD2BF6881600FCEC4D /* BulkBuddy.docc */; };
 		ABD55BC12BF6A73100FCEC4D /* FirestoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD55BC02BF6A73100FCEC4D /* FirestoreData.swift */; };
 		ABD55BC42BF6A7DF00FCEC4D /* FirestoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD55BC32BF6A7DF00FCEC4D /* FirestoreError.swift */; };
@@ -64,7 +65,6 @@
 		ABFF57272BA37E530073DA45 /* BulkBuddyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57262BA37E530073DA45 /* BulkBuddyTests.swift */; };
 		ABFF57312BA37E530073DA45 /* BulkBuddyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57302BA37E530073DA45 /* BulkBuddyUITests.swift */; };
 		ABFF57332BA37E530073DA45 /* BulkBuddyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFF57322BA37E530073DA45 /* BulkBuddyUITestsLaunchTests.swift */; };
-		ABFF574C2BA385780073DA45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABFF574B2BA385780073DA45 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +126,7 @@
 		AB84016C2BF0250D003AEAF7 /* TeaserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeaserCell.swift; sourceTree = "<group>"; };
 		AB84016E2BF02FFD003AEAF7 /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		AB9446D82BFD47DB00A907F2 /* DependencyRelatedContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyRelatedContent.swift; sourceTree = "<group>"; };
+		ABC179112C1B4B81005F9C10 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABD55BAD2BF6881600FCEC4D /* BulkBuddy.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = BulkBuddy.docc; sourceTree = "<group>"; };
 		ABD55BC02BF6A73100FCEC4D /* FirestoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreData.swift; sourceTree = "<group>"; };
 		ABD55BC32BF6A7DF00FCEC4D /* FirestoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreError.swift; sourceTree = "<group>"; };
@@ -141,7 +142,6 @@
 		ABFF57302BA37E530073DA45 /* BulkBuddyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkBuddyUITests.swift; sourceTree = "<group>"; };
 		ABFF57322BA37E530073DA45 /* BulkBuddyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulkBuddyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ABFF573F2BA37EFD0073DA45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		ABFF574B2BA385780073DA45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,7 +400,7 @@
 			children = (
 				ABD55BAD2BF6881600FCEC4D /* BulkBuddy.docc */,
 				ABFF573F2BA37EFD0073DA45 /* Info.plist */,
-				ABFF574B2BA385780073DA45 /* GoogleService-Info.plist */,
+				ABC179112C1B4B81005F9C10 /* GoogleService-Info.plist */,
 				ABFF57142BA37E500073DA45 /* BulkBuddyApp.swift */,
 				ABFF57162BA37E500073DA45 /* ContentView.swift */,
 				AB8401422BEFF771003AEAF7 /* Core */,
@@ -598,9 +598,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABFF571D2BA37E530073DA45 /* Preview Assets.xcassets in Resources */,
+				ABC179122C1B4B81005F9C10 /* GoogleService-Info.plist in Resources */,
 				ABFF57192BA37E530073DA45 /* Assets.xcassets in Resources */,
 				AB833E852BFB8372005E5DA6 /* Localizable.xcstrings in Resources */,
-				ABFF574C2BA385780073DA45 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

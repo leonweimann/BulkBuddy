@@ -182,6 +182,9 @@
     "Repeat your Password" : {
 
     },
+    "Save changes" : {
+
+    },
     "Scan" : {
       "extractionState" : "manual",
       "localizations" : {
