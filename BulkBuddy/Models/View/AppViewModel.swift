@@ -17,6 +17,10 @@ final class AppViewModel {
         InjectedValues.configure(for: applicationState)
         self.applicationState = applicationState
         self.router = router
+        
+        if applicationState == .mocked {
+            self.currentUser = .mock
+        }
     }
     
     // MARK: Config
