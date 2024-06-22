@@ -53,6 +53,7 @@ struct AccountSettingsView: View {
                     }
                 }
             }
+            .disabled(true)
             
             deleteUserSection
         }
@@ -253,14 +254,10 @@ struct AccountSettingsView: View {
             title: "Permanently Delete Your Account",
             subtitle: "Please note that deleting your account is irreversible. Once deleted, all your data will be permanently removed, and you will not be able to retrieve any stored information or access the services with this account again. If you are certain you wish to proceed, click on the confirm button below. If you need further assistance or have any questions, please contact our support team."
         ) {
-            Button(role: .destructive, action: handleDeleteAccount) {
+            Button(role: .destructive, action: viewModel.userDelete) {
                 Text("Confirm")
             }
         }
-    }
-    
-    private func handleDeleteAccount() {
-        // TODO: Implementation
     }
 }
 

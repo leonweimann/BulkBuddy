@@ -138,4 +138,22 @@ final class AppViewModel {
             }
         }
     }
+    
+    func userDelete() {
+        Task {
+            Task { @MainActor in
+                inceptLoading()
+            }
+            
+            do {
+                try await Task.sleep(for: .seconds(1))
+            } catch {
+                router.showAlert(.alert, title: "Failed user delete", subtitle: error.localizedDescription) { }
+            }
+            
+            Task { @MainActor in
+                terminateLoading()
+            }
+        }
+    }
 }
