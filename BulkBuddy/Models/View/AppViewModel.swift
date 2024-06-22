@@ -52,7 +52,7 @@ final class AppViewModel {
     
     static func createFrom(appState: ApplicationState, with router: AnyRouter) -> AppViewModel { AppViewModel(state: appState, router: router) }
     
-    // Routing
+    // MARK: Routing
     
     func handledEnvironment<C>(@ViewBuilder content: @escaping () -> C) -> some View where C: View {
         HandledEnvironment(appState: applicationState) {
@@ -93,7 +93,7 @@ final class AppViewModel {
         }
     }
     
-    // User
+    // MARK: User
     
     func updateUser(_ newUser: User?) {
         self.currentUser = newUser
@@ -117,6 +117,25 @@ final class AppViewModel {
             try await datastoreClient.set(data: currentUser) // optionally present beautiful loading screen (if func was initiated by user itself)
         } catch {
             // Handle error via 'router'
+        }
+    }
+    
+    func userSignOut() {
+        Task {
+            Task { @MainActor in
+                inceptLoading()
+            }
+            
+            do {
+                try authClient.signOut()
+                currentUser = nil
+            } catch {
+                router.showAlert(.alert, title: "Failed user sign out", subtitle: error.localizedDescription) { }
+            }
+            
+            Task { @MainActor in
+                terminateLoading()
+            }
         }
     }
 }

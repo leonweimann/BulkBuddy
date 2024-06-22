@@ -51,6 +51,13 @@ struct ProfileScreen: View {
                     Toggle(isOn: .constant(true)) { }
                 }
             }
+            
+            Section {
+                Button(role: .destructive, action: requestUserSignOut) {
+                    Label("Sign Out", systemImage: "figure.fall")
+                }
+                .foregroundStyle(.pink)
+            }
         }
         .navigationTitle("Profile")
     }
@@ -73,6 +80,14 @@ struct ProfileScreen: View {
     
     private func attachSaveUserLogic(saveUserLogic: @escaping () -> Void) {
         self.saveUserLogic = saveUserLogic
+    }
+    
+    private func requestUserSignOut() {
+        viewModel.router.showAlert(.confirmationDialog, title: "Do you really want to sign out?") {
+            Button(role: .destructive, action: viewModel.userSignOut) {
+                Text("Sign Out")
+            }
+        }
     }
 }
 
