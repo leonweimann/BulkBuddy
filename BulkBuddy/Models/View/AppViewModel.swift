@@ -54,17 +54,9 @@ final class AppViewModel {
     
     // MARK: Routing
     
-    func handledEnvironment<C>(@ViewBuilder content: @escaping () -> C) -> some View where C: View {
-        HandledEnvironment(appState: applicationState) {
-            content()
-        }
-        .environment(self)
-        .environment(\.router, router)
-    }
-    
     func showScreenHandled<C>(_ option: SegueOption = .push, onDismiss: (() -> Void)? = nil, @ViewBuilder destination: @escaping () -> C) where C: View {
         router.showScreen(option, onDismiss: onDismiss) { [self] _ in
-            handledEnvironment {
+            HandledEnvironment(appState: applicationState) {
                 destination()
             }
         }
@@ -72,9 +64,7 @@ final class AppViewModel {
     
     func inceptLoading() {
         router.showModal(id: "appProgressScreen", transition: .push(from: .top), animation: .smooth) {
-            HandledEnvironment {
-                AppProgressScreen()
-            }
+            AppProgressScreen()
         }
     }
     
