@@ -30,7 +30,6 @@ struct TeaserCell: View {
                     .padding(8)
             }
             .overlay(alignment: .bottom) { Divider() }
-
     }
     
     private var details: some View {

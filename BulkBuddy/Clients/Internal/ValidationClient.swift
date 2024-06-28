@@ -21,6 +21,15 @@ final actor ValidationClient {
         }
     }
     
+    static func checkValidity(phoneNumber: String) -> Bool {
+        do {
+            return try Regex("^\\+?\\d{1,4}[\\s.-]?\\d{3}[\\s.-]?\\d{3}[\\s.-]?\\d{4}$").wholeMatch(in: phoneNumber) != nil
+        } catch {
+            assertionFailure("Regular Expression for phoneNumber is invalid")
+            return false
+        }
+    }
+    
     static func checkValidity(password: String) -> Bool {
         do {
             return try Regex("(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[\\W_]).{8,}").wholeMatch(in: password) != nil
@@ -31,15 +40,29 @@ final actor ValidationClient {
     }
     
     static func checkValidity(birthDate: Date) -> Bool {
-        let ageComponents = Calendar.current.dateComponents([.year], from: birthDate, to: .now)
-        guard let age = ageComponents.year else { return false }
-        return (1..<120).contains(age)
+        getValidBirthDateRange().contains(birthDate)
+    }
+    
+    static func getValidBirthDateRange() -> ClosedRange<Date> {
+        let calendar = Calendar.current
+        guard
+            let upperBound = calendar.date(byAdding: .year, value: -1, to: .now),
+            let lowerBound = calendar.date(byAdding: .year, value: -120, to: .now)
+        else {
+            assertionFailure("Calculating dates failed")
+            return Date.now...Date.now
+        }
+        return lowerBound...upperBound
     }
 }
 
 extension String {
     var isValidEmail: Bool {
         ValidationClient.checkValidity(eMail: self)
+    }
+    
+    var isValidPhoneNumber: Bool {
+        ValidationClient.checkValidity(phoneNumber: self)
     }
     
     var isValidPassword: Bool {

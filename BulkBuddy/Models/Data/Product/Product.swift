@@ -24,8 +24,6 @@ struct Product: FirestoreData {
     var reorderNotes: String
     var restockPending: Bool
     
-    static func == (lhs: Product, rhs: Product) -> Bool { lhs.id == rhs.id }
-    
     static let mock = Product(
         id: "prod001",
         title: "Organic Bananas",

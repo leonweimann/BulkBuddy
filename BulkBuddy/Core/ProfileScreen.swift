@@ -12,9 +12,10 @@ import SwiftUI
 // MARK: - ProfileScreen
 
 struct ProfileScreen: View {
-    @Environment(\.router) private var router
+    @Environment(AppViewModel.self) private var viewModel
     
     var user: User = .mock
+    @State private var saveUserLogic: (() -> Void)? = nil
     
     var body: some View {
         List {
@@ -46,31 +47,23 @@ struct ProfileScreen: View {
             }
             
             Section("Application Settings") {
-                AppSettingsCell("Color scheme", systemImage: "moon.haze.fill", color: .indigo) {
+                LabeledFormCell("Color scheme", systemImage: "moon.haze.fill", color: .indigo) {
                     Toggle(isOn: .constant(true)) { }
                 }
+            }
+            
+            Section {
+                Button(role: .destructive, action: requestUserSignOut) {
+                    Label("Sign Out", systemImage: "figure.fall")
+                }
+                .foregroundStyle(.pink)
             }
         }
         .navigationTitle("Profile")
     }
     
-    private func AppSettingsCell<C>(_ title: String, systemImage: String, color: Color = .accentColor, @ViewBuilder content: @escaping () -> C) -> some View where C: View {
-        HStack(alignment: .center) {
-            Label {
-                Text(title)
-            } icon: {
-                Image(systemName: systemImage)
-                    .foregroundStyle(color)
-            }
-            
-            content()
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .tint(color)
-        }
-    }
-    
     private func switchToBusiness() {
-        router.showScreen(.fullScreenCover) { _ in
+        viewModel.showScreenHandled(.fullScreenCover) {
             ContentUnavailableView(
                 "Business View",
                 systemImage: "clock.badge.exclamationmark",
@@ -80,8 +73,20 @@ struct ProfileScreen: View {
     }
     
     private func showAccountSettingsView() {
-        router.showScreen(.push) { _ in
-            AccountSettingsView(user: user)
+        viewModel.showScreenHandled(.push, onDismiss: saveUserLogic) {
+            AccountSettingsView(user: user, saveLogicAdaption: attachSaveUserLogic)
+        }
+    }
+    
+    private func attachSaveUserLogic(saveUserLogic: @escaping () -> Void) {
+        self.saveUserLogic = saveUserLogic
+    }
+    
+    private func requestUserSignOut() {
+        viewModel.router.showAlert(.confirmationDialog, title: "Do you really want to sign out?") {
+            Button(role: .destructive, action: viewModel.userSignOut) {
+                Text("Sign Out")
+            }
         }
     }
 }

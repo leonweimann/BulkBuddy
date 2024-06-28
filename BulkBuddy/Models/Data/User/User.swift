@@ -22,23 +22,25 @@ struct User: FirestoreData {
     var balance: Double
     var permission: UserPermissionLevel
     var basket: UserBasket
-    var family: UserFamily
+    var family: UserFamily.ID
     var starredBusinesses: Set<Business.ID>
     
-    static func == (lhs: User, rhs: User) -> Bool { lhs.id == rhs.id }
+    var age: Int {
+        Calendar.current.dateComponents([.year], from: birthDate, to: .now).year ?? -1
+    }
     
     static let mock = User(
         id: "user01",
         name: "John Doe",
         email: "john.doe@example.com",
-        phoneNumber: "123-456-7890",
+        phoneNumber: "+49 159 4057395",
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/IJustine_2015.jpg/640px-IJustine_2015.jpg",
-        birthDate: Date(),
+        birthDate: Calendar.current.date(byAdding: .year, value: -25, to: .now) ?? .now,
         info: "Loyal customer",
         balance: 150.50,
         permission: .owner,
         basket: UserBasket(),
-        family: UserFamily(),
+        family: UUID().uuidString,
         starredBusinesses: []
     )
     
@@ -48,12 +50,12 @@ struct User: FirestoreData {
         email: "",
         phoneNumber: "",
         image: "",
-        birthDate: .now,
+        birthDate: Calendar.current.date(byAdding: .year, value: -25, to: .now) ?? .now,
         info: "",
         balance: 0,
         permission: .none,
         basket: .init(),
-        family: .init(),
+        family: UUID().uuidString,
         starredBusinesses: []
     )
 }

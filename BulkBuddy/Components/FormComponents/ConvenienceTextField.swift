@@ -17,6 +17,7 @@ struct ConvenienceTextField: View {
         isSecureField: Bool = false,
         autoFocussed: Bool = false,
         isFocused: Binding<Bool>? = nil,
+        focusDependentOverlays: Bool = true,
         validContentSymbol: String = "chevron.forward.circle",
         isContentValid: ((String) -> Bool)? = nil,
         onSubmit: (() -> Void)? = nil
@@ -26,6 +27,7 @@ struct ConvenienceTextField: View {
         self.isSecureField = isSecureField
         self.autoFocussed = autoFocussed
         self.parentFocusOverride = isFocused
+        self.focusDependentOverlays = focusDependentOverlays
         self.validContentSymbol = validContentSymbol
         self.isContentValid = isContentValid
         self.onSubmit = onSubmit
@@ -38,8 +40,13 @@ struct ConvenienceTextField: View {
     let validContentSymbol: String
     
     let autoFocussed: Bool
+    let focusDependentOverlays: Bool
     @FocusState private var isFocused: Bool
     var parentFocusOverride: Binding<Bool>?
+    
+    private var showOverlay: Bool {
+        focusDependentOverlays ? isFocused : true
+    }
     
     let isContentValid: ((String) -> Bool)?
     let onSubmit: (() -> Void)?
@@ -61,7 +68,7 @@ struct ConvenienceTextField: View {
                     .background(.black.opacity(0.001))
                     .offset(x: 8)
                     .frame(maxWidth: .infinity, alignment: .trailing)
-                    .offset(x: isContentValidWrapped ? 0 : 100)
+                    .offset(x: isContentValidWrapped && showOverlay ? 0 : 100)
             }
             
             Image(systemName: "xmark.circle")
@@ -73,8 +80,9 @@ struct ConvenienceTextField: View {
                 .offset(x: 8)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .offset(x: isContentValidWrapped ? 100 : 0)
-                .opacity(text.isEmpty ? 0 : 1)
+                .opacity(!text.isEmpty && showOverlay ? 1 : 0)
         }
+        .animation(.bouncy, value: isContentValidWrapped)
         .onAppear(perform: handleAppear)
         .onChange(of: parentFocusOverride?.wrappedValue) { oldValue, newValue in
             if let newValue {
