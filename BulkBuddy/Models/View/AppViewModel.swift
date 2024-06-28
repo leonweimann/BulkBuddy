@@ -73,7 +73,7 @@ final class AppViewModel {
     }
     
     func showNotificationCapsule(_ title: String, systemImage: String, duration: Duration = .seconds(2)) {
-        router.showModal(id: "notificationCapsule", transition: .push(from: .top), animation: .snappy, alignment: .top, ignoreSafeArea: false) {
+        router.showModal(id: "notificationCapsule", transition: .offset(y: -200), animation: .snappy, alignment: .top, ignoreSafeArea: false) {
             NotificationCapsule(title: title, systemImage: systemImage)
         }
         
