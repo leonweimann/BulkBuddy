@@ -29,7 +29,7 @@ struct CircleIconToggleStyle: ToggleStyle {
                         .transition(.opacity)
                 }
             }
-            .padding()
+//            .padding()
             .asButton(.press) { configuration.isOn.toggle() }
     }
 }

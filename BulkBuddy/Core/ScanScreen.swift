@@ -25,54 +25,99 @@ struct ScanScreen: View {
     var body: some View {
         CodeScannerView(
             codeTypes: [.qr],
-            showViewfinder: true,
+            showViewfinder: scanValue == nil,
             simulatedData: UUID().uuidString,
             shouldVibrateOnSuccess: true,
             isTorchOn: isTorchOn,
+            isPaused: scanValue != nil,
             videoCaptureDevice: .zoomedCameraForQRCode(),
             completion: handleCodeScannerCompletion
         )
         .ignoresSafeArea()
         .overlay(alignment: .top) {
-            VStack {
-                Text(scanValue ?? "Scan a product's qr code")
+            if scanValue == nil {
+                Text("Scan a product's QR code")
+                    .foregroundStyle(.white)
                     .font(.callout)
-                    .fontWeight(scanValue == nil ? .semibold : nil)
+                    .fontWeight(.semibold)
                     .padding()
-                    .lineLimit(1)
-                    .contentTransition(.numericText())
-                    .animation(.default, value: scanValue)
-                
-                Divider()
-                    .background(.white)
+                    .frame(maxWidth: .infinity)
+                    .background(.accent.tertiary, in: .capsule)
+                    .padding()
+                    .transition(.offset(y: -150))
             }
-            .frame(maxWidth: .infinity)
-            .background(.accent)
         }
-        .overlay(alignment: .bottom) {
-            VStack {
-                Divider()
+        .overlay(alignment: .trailing) {
+            VStack(spacing: 8) {
+                Toggle(isOn: $isTorchOn) {
+                    Image(systemName: torchSymbol)
+                }
+                .toggleStyle(.circleIcon())
+                .animation(.default, value: isTorchOn)
+                .offset(y: -2)
                 
-                HStack {
-                    Toggle(isOn: $isTorchOn) {
-                        Image(systemName: torchSymbol)
-                    }
-                    .toggleStyle(CircleIconToggleStyle())
+                if scanValue != nil {
+                    Image(systemName: "arrow.up.backward")
+                        .font(.title3)
+                        .padding()
+                        .transition(.opacity)
+                        .asButton(.opacity, action: presentProductSheet)
+                        .padding(.vertical)
+                }
+                
+                CircleIconToggleAsButton(isOn: scanValue != nil, color: .red, action: onCancelPressed) {
+                    Image(systemName: "xmark")
+                        .fontWeight(.bold)
+                        .padding(-2)
                 }
             }
-            .frame(maxWidth: .infinity)
-            .background(.regularMaterial)
+            .frame(width: 64)
+            .padding(.vertical, 8)
+            .background(.regularMaterial, in: .rect(cornerRadius: 16))
+            .padding()
         }
+        .onChange(of: scanValue, handleScanValueChange)
+        .animation(.default, value: scanValue)
+    }
+    
+    private func CircleIconToggleAsButton<L>(isOn: Bool, color: Color, action: @escaping () -> Void, @ViewBuilder label: () -> L) -> some View where L: View {
+        Toggle(isOn: .constant(isOn)) {
+            label()
+                .foregroundStyle(isOn ? .primary : .secondary)
+        }
+        .toggleStyle(.circleIcon(color: color))
+        .disabled(true)
+        .asButton(.press, action: action)
+        .disabled(!isOn)
+        .animation(.default, value: isOn)
     }
     
     private func onTorchButtonPressed() {
         isTorchOn.toggle()
     }
     
+    private func onCancelPressed() {
+        scanValue = nil
+    }
+    
+    private func presentProductSheet() {
+        viewModel.showScreenHandled(.sheet) {
+            ContentUnavailableView(
+                "This screen will be produced in future",
+                systemImage: "tray.and.arrow.down"
+            )
+        }
+    }
+    
+    private func handleScanValueChange(oldValue: String?, newValue: String?) {
+        if newValue == nil { isTorchOn = false }
+        else { /*presentProductSheet()*/ }
+    }
+    
     private func handleCodeScannerCompletion(with result: Result<ScanResult, ScanError>) {
         switch result {
         case .success(let scan):
-            self.scanValue = scan.string
+            scanValue = scan.string
             
         case .failure(let error):
             viewModel.showError(error, with: "Scanning QR-Code failed")
