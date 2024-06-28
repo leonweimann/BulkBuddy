@@ -28,7 +28,7 @@ struct ScanScreen: View {
             showViewfinder: true,
             simulatedData: UUID().uuidString,
             shouldVibrateOnSuccess: true,
-            isTorchOn: false,
+            isTorchOn: isTorchOn,
             videoCaptureDevice: .zoomedCameraForQRCode(),
             completion: handleCodeScannerCompletion
         )
@@ -54,16 +54,10 @@ struct ScanScreen: View {
                 Divider()
                 
                 HStack {
-                    Image(systemName: torchSymbol)
-                        .symbolEffect(.bounce, value: isTorchOn) // in SDK18 -> magic effect ...
-                        .padding()
-                        .foregroundStyle(.white)
-                        .background(.accent.gradient)
-                        .clipShape(.circle)
-                        .asButton(.press, action: onTorchButtonPressed)
-                        .padding()
-                    
-                    
+                    Toggle(isOn: $isTorchOn) {
+                        Image(systemName: torchSymbol)
+                    }
+                    .toggleStyle(CircleIconToggleStyle())
                 }
             }
             .frame(maxWidth: .infinity)
