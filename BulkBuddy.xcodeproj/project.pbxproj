@@ -33,6 +33,7 @@
 		AB4E0A0C2BA394070041171C /* DatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0B2BA394070041171C /* DatastoreClient.swift */; };
 		AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */; };
 		AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */; };
+		AB6C23712C2F55CD00C5CCDA /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = AB6C23702C2F55CD00C5CCDA /* CodeScanner */; };
 		AB833E832BFB762A005E5DA6 /* AppProgressScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */; };
 		AB833E852BFB8372005E5DA6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */; };
 		AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */; };
@@ -156,6 +157,7 @@
 				AB971E582BFF71AC00B4AC73 /* FirebaseFirestore in Frameworks */,
 				AB971E562BFF71A400B4AC73 /* SwiftfulRouting in Frameworks */,
 				AB971E5A2BFF71AC00B4AC73 /* FirebaseFirestoreSwift in Frameworks */,
+				AB6C23712C2F55CD00C5CCDA /* CodeScanner in Frameworks */,
 				AB971E502BFF718700B4AC73 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +506,7 @@
 				AB971E552BFF71A400B4AC73 /* SwiftfulRouting */,
 				AB971E572BFF71AC00B4AC73 /* FirebaseFirestore */,
 				AB971E592BFF71AC00B4AC73 /* FirebaseFirestoreSwift */,
+				AB6C23702C2F55CD00C5CCDA /* CodeScanner */,
 			);
 			productName = BulkBuddy;
 			productReference = ABFF57112BA37E500073DA45 /* BulkBuddy.app */;
@@ -583,6 +586,7 @@
 				AB971E272BFF68CF00B4AC73 /* XCRemoteSwiftPackageReference "SwiftfulUI" */,
 				AB971E2A2BFF68E900B4AC73 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				AB971E2D2BFF68F500B4AC73 /* XCRemoteSwiftPackageReference "SwiftfulRouting" */,
+				AB6C236F2C2F55CD00C5CCDA /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = ABFF57122BA37E500073DA45 /* Products */;
 			projectDirPath = "";
@@ -1046,6 +1050,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AB6C236F2C2F55CD00C5CCDA /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.0;
+			};
+		};
 		AB971E202BFF68C000B4AC73 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1081,6 +1093,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AB6C23702C2F55CD00C5CCDA /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AB6C236F2C2F55CD00C5CCDA /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		AB971E4F2BFF718700B4AC73 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AB971E202BFF68C000B4AC73 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
