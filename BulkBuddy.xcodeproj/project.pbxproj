@@ -34,6 +34,7 @@
 		AB4E0A0E2BA394580041171C /* MockDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */; };
 		AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */; };
 		AB6C23712C2F55CD00C5CCDA /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = AB6C23702C2F55CD00C5CCDA /* CodeScanner */; };
+		AB6C23742C2F689000C5CCDA /* CircleIconToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6C23732C2F689000C5CCDA /* CircleIconToggleStyle.swift */; };
 		AB833E832BFB762A005E5DA6 /* AppProgressScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */; };
 		AB833E852BFB8372005E5DA6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */; };
 		AB84014B2BEFFD53003AEAF7 /* UserBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */; };
@@ -111,6 +112,7 @@
 		AB4E0A0B2BA394070041171C /* DatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0D2BA394580041171C /* MockDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDatastoreClient.swift; sourceTree = "<group>"; };
 		AB4E0A0F2BA3945E0041171C /* FirebaseDatastoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDatastoreClient.swift; sourceTree = "<group>"; };
+		AB6C23732C2F689000C5CCDA /* CircleIconToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleIconToggleStyle.swift; sourceTree = "<group>"; };
 		AB833E822BFB762A005E5DA6 /* AppProgressScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProgressScreen.swift; sourceTree = "<group>"; };
 		AB833E842BFB8372005E5DA6 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		AB84014A2BEFFD53003AEAF7 /* UserBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBasket.swift; sourceTree = "<group>"; };
@@ -293,6 +295,14 @@
 			path = Datastore;
 			sourceTree = "<group>";
 		};
+		AB6C23722C2F687400C5CCDA /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				AB6C23732C2F689000C5CCDA /* CircleIconToggleStyle.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
 		AB8401422BEFF771003AEAF7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +323,7 @@
 				AB0A55412BFFBAFE00077271 /* NotificationCapsule.swift */,
 				AB0A55472BFFD20500077271 /* Images */,
 				AB0A55462BFFD1F600077271 /* FormComponents */,
+				AB6C23722C2F687400C5CCDA /* Styles */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -678,6 +689,7 @@
 				AB8401602BF00A12003AEAF7 /* Business.swift in Sources */,
 				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,
 				AB84015B2BF00537003AEAF7 /* BasketScreen.swift in Sources */,
+				AB6C23742C2F689000C5CCDA /* CircleIconToggleStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
