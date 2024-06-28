@@ -83,6 +83,10 @@ final class AppViewModel {
         }
     }
     
+    func showError(_ error: any Error, with title: String) {
+        router.showAlert(.alert, title: title, subtitle: error.localizedDescription) { }
+    }
+    
     // MARK: User
     
     func updateUser(_ newUser: User?) {
