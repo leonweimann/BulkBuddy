@@ -6,7 +6,6 @@
 //
 
 import CodeScanner
-import SwiftfulRouting
 import SwiftfulUI
 import SwiftUI
 
@@ -18,66 +17,75 @@ struct ScanScreen: View {
     @State private var scanValue: String?
     @State private var isTorchOn = false
     
-    private var torchSymbol: String {
-        "flashlight.\(isTorchOn ? "on" : "off").fill"
-    }
+    private var hasScanned: Bool { scanValue != nil }
+    private var torchSymbol: String { "flashlight.\(isTorchOn ? "on" : "off").fill" }
     
     var body: some View {
         CodeScannerView(
             codeTypes: [.qr],
-            showViewfinder: scanValue == nil,
+            showViewfinder: !hasScanned,
             simulatedData: UUID().uuidString,
             shouldVibrateOnSuccess: true,
             isTorchOn: isTorchOn,
-            isPaused: scanValue != nil,
+            isPaused: hasScanned,
             videoCaptureDevice: .zoomedCameraForQRCode(),
             completion: handleCodeScannerCompletion
         )
         .ignoresSafeArea()
         .overlay(alignment: .top) {
-            if scanValue == nil {
-                Text("Scan a product's QR code")
-                    .foregroundStyle(.white)
-                    .font(.callout)
-                    .fontWeight(.semibold)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.accent.tertiary, in: .capsule)
-                    .padding()
-                    .transition(.offset(y: -150))
+            if !hasScanned {
+                viewExplanationBubble
             }
         }
         .overlay(alignment: .trailing) {
-            VStack(spacing: 8) {
-                Toggle(isOn: $isTorchOn) {
-                    Image(systemName: torchSymbol)
-                }
-                .toggleStyle(.circleIcon())
-                .animation(.default, value: isTorchOn)
-                .offset(y: -2)
-                
-                if scanValue != nil {
-                    Image(systemName: "arrow.up.backward")
-                        .font(.title3)
-                        .padding()
-                        .transition(.opacity)
-                        .asButton(.opacity, action: presentProductSheet)
-                        .padding(.vertical)
-                }
-                
-                CircleIconToggleAsButton(isOn: scanValue != nil, color: .red, action: onCancelPressed) {
-                    Image(systemName: "xmark")
-                        .fontWeight(.bold)
-                        .padding(-2)
-                }
-            }
-            .frame(width: 64)
-            .padding(.vertical, 8)
-            .background(.regularMaterial, in: .rect(cornerRadius: 16))
-            .padding()
+            scannerControls
         }
         .onChange(of: scanValue, handleScanValueChange)
         .animation(.default, value: scanValue)
+    }
+    
+    // MARK: Visual
+    
+    private var viewExplanationBubble: some View {
+        Text("Scan a product's QR code")
+            .foregroundStyle(.white)
+            .font(.callout)
+            .fontWeight(.semibold)
+            .padding()
+            .frame(maxWidth: .infinity)
+            .background(.accent.tertiary, in: .capsule)
+            .padding()
+            .transition(.offset(y: -150))
+    }
+    
+    private var scannerControls: some View {
+        VStack(spacing: 8) {
+            Toggle(isOn: $isTorchOn) {
+                Image(systemName: torchSymbol)
+            }
+            .toggleStyle(.circleIcon())
+            .animation(.default, value: isTorchOn)
+            .offset(y: -2)
+            
+            if hasScanned {
+                Image(systemName: "arrow.up.backward")
+                    .font(.title3)
+                    .padding()
+                    .transition(.opacity)
+                    .asButton(.opacity, action: presentProductSheet)
+                    .padding(.vertical)
+            }
+            
+            CircleIconToggleAsButton(isOn: hasScanned, color: .red, action: onCancelPressed) {
+                Image(systemName: "xmark")
+                    .fontWeight(.bold)
+                    .padding(-2)
+            }
+        }
+        .frame(width: 64)
+        .padding(.vertical, 8)
+        .background(.regularMaterial, in: .rect(cornerRadius: 16))
+        .padding()
     }
     
     private func CircleIconToggleAsButton<L>(isOn: Bool, color: Color, action: @escaping () -> Void, @ViewBuilder label: () -> L) -> some View where L: View {
@@ -92,13 +100,7 @@ struct ScanScreen: View {
         .animation(.default, value: isOn)
     }
     
-    private func onTorchButtonPressed() {
-        isTorchOn.toggle()
-    }
-    
-    private func onCancelPressed() {
-        scanValue = nil
-    }
+    // MARK: Logic
     
     private func presentProductSheet() {
         viewModel.showScreenHandled(.sheet) {
@@ -109,9 +111,17 @@ struct ScanScreen: View {
         }
     }
     
+    private func onTorchButtonPressed() {
+        isTorchOn.toggle()
+    }
+    
+    private func onCancelPressed() {
+        scanValue = nil
+    }
+    
     private func handleScanValueChange(oldValue: String?, newValue: String?) {
         if newValue == nil { isTorchOn = false }
-        else { /*presentProductSheet()*/ }
+        else { /*presentProductSheet()*/ } // Should product sheet be presented instantly? -> configurable in app settings
     }
     
     private func handleCodeScannerCompletion(with result: Result<ScanResult, ScanError>) {
