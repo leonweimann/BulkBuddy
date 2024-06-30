@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+// MARK: - UserError
+
+enum UserError: Error {
+    case userAlreadyExists
+    case internalIssue(FirestoreError)
+}
