@@ -78,7 +78,11 @@ final class FirebaseUserManager: UserManager {
     }
     
     func userModel() async throws -> User {
-        guard let signedUserID else { throw UserError.userIsNotAuthenticated }
-        return try await datastore.get(User.self, for: signedUserID)
+        do {
+            guard let signedUserID else { throw UserError.userIsNotAuthenticated }
+            return try await datastore.get(User.self, for: signedUserID)
+        } catch {
+            throw wrappedError(error)
+        }
     }
 }

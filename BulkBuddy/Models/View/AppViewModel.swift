@@ -80,7 +80,7 @@ final class AppViewModel {
         
         Task {
             try? await Task.sleep(for: duration)
-            router.dismissModal(id: "notificationCapsule") // ISSUE: Without animation -> check in framework why
+            router.dismissModal(id: "notificationCapsule")
         }
     }
     
