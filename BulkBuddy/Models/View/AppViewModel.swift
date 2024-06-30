@@ -100,17 +100,17 @@ final class AppViewModel {
         do {
             currentUser = try await datastoreClient.get(User.self, for: authUser.uid) // while get function is awaited, show loading screen (beautiful version ;D)
         } catch {
-            // Handle error via 'router'
+            showError(error, with: "Getting user data failed") // Handle error via 'router'
         }
     }
     
     func pushUserData() async {
-        guard let currentUser else { return } // handle issue via alert -> 'router'
+        guard let currentUser else { return } // handle issue via alert -> 'router' MARK: ||| or log issue, since this should never be a problem
         
         do {
-            try await datastoreClient.set(data: currentUser) // optionally present beautiful loading screen (if func was initiated by user itself)
+            try await datastoreClient.set(data: currentUser) // optionally present beautiful loading screen (if func was initiated by user itself) MARK: ||| or present progress view in a corner (like games do)
         } catch {
-            // Handle error via 'router'
+            showError(error, with: "Saving user data failed") // Handle error via 'router'
         }
     }
     
