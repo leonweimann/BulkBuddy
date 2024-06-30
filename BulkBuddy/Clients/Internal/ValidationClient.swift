@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - ValidationClient
 
-fileprivate final actor ValidationClient {
+final actor ValidationClient {
     private init() { }
     
     static func checkValidity(eMail: String) -> Bool {
