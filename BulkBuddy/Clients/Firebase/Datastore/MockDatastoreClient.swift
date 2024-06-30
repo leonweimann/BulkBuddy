@@ -35,4 +35,8 @@ final class MockDatastoreClient: DatastoreClient {
     func set(data: any FirestoreData) async throws {
         throw FirestoreError.notAvailable("This feature isn't available in that environment")
     }
+    
+    func delete(data: any FirestoreData) async throws {
+        throw FirestoreError.notAvailable("This feature isn't available in that environment")
+    }
 }

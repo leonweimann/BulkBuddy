@@ -32,4 +32,11 @@ final class FirebaseDatastoreClient: DatastoreClient {
             .document(data.documentPath)
             .setData(data.firestoreDocumentData())
     }
+    
+    func delete(data: any FirestoreData) async throws {
+        try await database
+            .collection(data.collectionPath)
+            .document(data.documentPath)
+            .delete()
+    }
 }
