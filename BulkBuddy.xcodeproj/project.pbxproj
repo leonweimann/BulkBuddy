@@ -23,6 +23,9 @@
 		AB2963522BFFEF11007AC2CF /* ValidationStageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2963512BFFEF11007AC2CF /* ValidationStageContainer.swift */; };
 		AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */; };
 		AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB29D2522BA42C7200489A34 /* ApplicationState.swift */; };
+		AB4388422C31C1A3004B87D5 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4388412C31C1A3004B87D5 /* UserManager.swift */; };
+		AB4388442C31C1A8004B87D5 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4388432C31C1A8004B87D5 /* ProductManager.swift */; };
+		AB4388462C31C1AC004B87D5 /* BusinessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4388452C31C1AC004B87D5 /* BusinessManager.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
 		AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FB2BA38A120041171C /* AppViewModel.swift */; };
 		AB4E09FE2BA38B310041171C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FD2BA38B310041171C /* Product.swift */; };
@@ -102,6 +105,9 @@
 		AB2963512BFFEF11007AC2CF /* ValidationStageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationStageContainer.swift; sourceTree = "<group>"; };
 		AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandledEnvironment.swift; sourceTree = "<group>"; };
 		AB29D2522BA42C7200489A34 /* ApplicationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationState.swift; sourceTree = "<group>"; };
+		AB4388412C31C1A3004B87D5 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		AB4388432C31C1A8004B87D5 /* ProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
+		AB4388452C31C1AC004B87D5 /* BusinessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessManager.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB4E09FB2BA38A120041171C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		AB4E09FD2BA38B310041171C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -236,6 +242,16 @@
 				AB29D24E2BA4284100489A34 /* HandledEnvironment.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		AB43883F2C31C172004B87D5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				AB4388412C31C1A3004B87D5 /* UserManager.swift */,
+				AB4388432C31C1A8004B87D5 /* ProductManager.swift */,
+				AB4388452C31C1AC004B87D5 /* BusinessManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		AB4E09F82BA3897F0041171C /* Data */ = {
@@ -423,6 +439,7 @@
 				AB8401432BEFF775003AEAF7 /* Components */,
 				ABFF57522BA388410073DA45 /* Clients */,
 				ABFF57512BA3883C0073DA45 /* Models */,
+				AB43883F2C31C172004B87D5 /* Managers */,
 				ABFF574E2BA388220073DA45 /* Support */,
 				ABFF574D2BA387E50073DA45 /* Resources */,
 				ABFF571A2BA37E530073DA45 /* BulkBuddy.entitlements */,
@@ -648,7 +665,9 @@
 				AB8401592BF00520003AEAF7 /* ScanScreen.swift in Sources */,
 				AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */,
 				AB0A553E2BFF801700077271 /* ProfileScreen.swift in Sources */,
+				AB4388462C31C1AC004B87D5 /* BusinessManager.swift in Sources */,
 				AB0A55452BFFC4A800077271 /* WebImagePicker.swift in Sources */,
+				AB4388422C31C1A3004B87D5 /* UserManager.swift in Sources */,
 				AB0A553D2BFF801200077271 /* DependencyRelatedContent.swift in Sources */,
 				AB4E0A042BA38D810041171C /* FirebaseAuthenticationClient.swift in Sources */,
 				AB4E0A102BA3945E0041171C /* FirebaseDatastoreClient.swift in Sources */,
@@ -679,6 +698,7 @@
 				AB8401532BEFFE22003AEAF7 /* ProductCategory.swift in Sources */,
 				AB29D24F2BA4284100489A34 /* HandledEnvironment.swift in Sources */,
 				AB8401572BF002A2003AEAF7 /* HomeScreen.swift in Sources */,
+				AB4388442C31C1A8004B87D5 /* ProductManager.swift in Sources */,
 				AB84016F2BF02FFD003AEAF7 /* AccountSettingsView.swift in Sources */,
 				ABFF57152BA37E500073DA45 /* BulkBuddyApp.swift in Sources */,
 				ABD55BAE2BF6881600FCEC4D /* BulkBuddy.docc in Sources */,
