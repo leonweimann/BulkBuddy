@@ -196,6 +196,9 @@
         }
       }
     },
+    "Scan a product's QR code" : {
+
+    },
     "Show Password" : {
 
     },
@@ -229,6 +232,9 @@
 
     },
     "This screen will be developed in continues coding sessions" : {
+
+    },
+    "This screen will be produced in future" : {
 
     },
     "You need to provide a link to the image you want to set. You can simply go to the web and copy on image you like." : {
