@@ -14,11 +14,15 @@ import Foundation
 final class FirebaseDatastoreClient: DatastoreClient {
     private let database = Firestore.firestore()
     
-    func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T: FirestoreData {
+    func snapshot<T>(_ dataType: T.Type, for documentPath: String) async throws -> DocumentSnapshot where T: FirestoreData {
         try await database
             .collection(dataType._collectionPath)
             .document(documentPath)
             .getDocument()
+    }
+    
+    func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T: FirestoreData {
+        try await snapshot(dataType, for: documentPath)
             .data(as: dataType)
     }
     

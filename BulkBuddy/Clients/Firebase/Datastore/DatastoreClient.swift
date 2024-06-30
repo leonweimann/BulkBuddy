@@ -12,6 +12,7 @@ import Foundation
 // MARK: - DatastoreClient
 
 protocol DatastoreClient {
+    func snapshot<T>(_ dataType: T.Type, for documentPath: String) async throws -> DocumentSnapshot where T: FirestoreData
     func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T: FirestoreData
     func set(data: any FirestoreData) async throws
 }
