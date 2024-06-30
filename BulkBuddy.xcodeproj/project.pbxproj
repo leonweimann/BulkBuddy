@@ -29,6 +29,8 @@
 		AB4388482C31C8DA004B87D5 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4388472C31C8DA004B87D5 /* UserError.swift */; };
 		AB43884D2C31DD57004B87D5 /* DatastoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43884B2C31DD57004B87D5 /* DatastoreClient.swift */; };
 		AB43884E2C31DD57004B87D5 /* AuthenticationClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB43884C2C31DD57004B87D5 /* AuthenticationClient.swift */; };
+		AB4388512C31E69F004B87D5 /* FirebaseUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4388502C31E69F004B87D5 /* FirebaseUserManager.swift */; };
+		AB4388532C31E6A4004B87D5 /* MockUserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4388522C31E6A3004B87D5 /* MockUserManager.swift */; };
 		AB4E09F72BA3897E0041171C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09F62BA3897E0041171C /* User.swift */; };
 		AB4E09FC2BA38A120041171C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FB2BA38A120041171C /* AppViewModel.swift */; };
 		AB4E09FE2BA38B310041171C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4E09FD2BA38B310041171C /* Product.swift */; };
@@ -108,6 +110,8 @@
 		AB4388472C31C8DA004B87D5 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		AB43884B2C31DD57004B87D5 /* DatastoreClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatastoreClient.swift; sourceTree = "<group>"; };
 		AB43884C2C31DD57004B87D5 /* AuthenticationClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationClient.swift; sourceTree = "<group>"; };
+		AB4388502C31E69F004B87D5 /* FirebaseUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserManager.swift; sourceTree = "<group>"; };
+		AB4388522C31E6A3004B87D5 /* MockUserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockUserManager.swift; sourceTree = "<group>"; };
 		AB4E09F62BA3897E0041171C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AB4E09FB2BA38A120041171C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		AB4E09FD2BA38B310041171C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -241,11 +245,21 @@
 		AB43883F2C31C172004B87D5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				AB4388412C31C1A3004B87D5 /* UserManager.swift */,
 				AB4388432C31C1A8004B87D5 /* ProductManager.swift */,
 				AB4388452C31C1AC004B87D5 /* BusinessManager.swift */,
+				AB43884F2C31E697004B87D5 /* UserManager */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		AB43884F2C31E697004B87D5 /* UserManager */ = {
+			isa = PBXGroup;
+			children = (
+				AB4388412C31C1A3004B87D5 /* UserManager.swift */,
+				AB4388502C31E69F004B87D5 /* FirebaseUserManager.swift */,
+				AB4388522C31E6A3004B87D5 /* MockUserManager.swift */,
+			);
+			path = UserManager;
 			sourceTree = "<group>";
 		};
 		AB4E09F82BA3897F0041171C /* Data */ = {
@@ -271,18 +285,10 @@
 		AB4E09FF2BA38CED0041171C /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				AB4E0A022BA38D730041171C /* Authentication */,
-				AB4E0A0A2BA393FB0041171C /* Datastore */,
+				AB43884C2C31DD57004B87D5 /* AuthenticationClient.swift */,
+				AB43884B2C31DD57004B87D5 /* DatastoreClient.swift */,
 			);
 			path = Firebase;
-			sourceTree = "<group>";
-		};
-		AB4E0A022BA38D730041171C /* Authentication */ = {
-			isa = PBXGroup;
-			children = (
-				AB43884C2C31DD57004B87D5 /* AuthenticationClient.swift */,
-			);
-			path = Authentication;
 			sourceTree = "<group>";
 		};
 		AB4E0A072BA391E30041171C /* DependencyInjection */ = {
@@ -291,14 +297,6 @@
 				AB4E0A082BA391F00041171C /* DependencyInjectionContainer.swift */,
 			);
 			path = DependencyInjection;
-			sourceTree = "<group>";
-		};
-		AB4E0A0A2BA393FB0041171C /* Datastore */ = {
-			isa = PBXGroup;
-			children = (
-				AB43884B2C31DD57004B87D5 /* DatastoreClient.swift */,
-			);
-			path = Datastore;
 			sourceTree = "<group>";
 		};
 		AB6C23722C2F687400C5CCDA /* Styles */ = {
@@ -674,6 +672,7 @@
 				AB0A554A2BFFD27600077271 /* IconContentCell.swift in Sources */,
 				AB02C9002BF12A3000A29E49 /* AnimatedWelcomeCell.swift in Sources */,
 				AB0A554C2BFFDA0D00077271 /* ValidatableSection.swift in Sources */,
+				AB4388532C31E6A4004B87D5 /* MockUserManager.swift in Sources */,
 				AB8401632BF00C39003AEAF7 /* ShapeStyle+AccentColor.swift in Sources */,
 				AB02C8FE2BF1256900A29E49 /* WelcomeView.swift in Sources */,
 				AB84016D2BF0250D003AEAF7 /* TeaserCell.swift in Sources */,
@@ -698,6 +697,7 @@
 				AB29D2532BA42C7200489A34 /* ApplicationState.swift in Sources */,
 				AB84015B2BF00537003AEAF7 /* BasketScreen.swift in Sources */,
 				AB6C23742C2F689000C5CCDA /* CircleIconToggleStyle.swift in Sources */,
+				AB4388512C31E69F004B87D5 /* FirebaseUserManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
