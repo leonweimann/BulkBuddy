@@ -15,7 +15,8 @@ import SwiftUI
 final class AppViewModel {
     private init(state applicationState: ApplicationState, router: AnyRouter) {
         InjectedValues.configure(for: applicationState)
-        self.applicationState = applicationState
+        Self.applicationState = applicationState
+        
         self.router = router
         
         if applicationState == .mocked {
@@ -25,7 +26,7 @@ final class AppViewModel {
     
     // MARK: Config
     
-    let applicationState: ApplicationState
+    static var applicationState: ApplicationState = .mocked
     
     @ObservationIgnored
     @Injected(\.authClient) private var authClient
@@ -55,8 +56,8 @@ final class AppViewModel {
     // MARK: Routing
     
     func showScreenHandled<C>(_ option: SegueOption = .push, onDismiss: (() -> Void)? = nil, @ViewBuilder destination: @escaping () -> C) where C: View {
-        router.showScreen(option, onDismiss: onDismiss) { [self] _ in
-            HandledEnvironment(appState: applicationState) {
+        router.showScreen(option, onDismiss: onDismiss) { _ in
+            HandledEnvironment(appState: Self.applicationState) {
                 destination()
             }
         }
@@ -94,25 +95,25 @@ final class AppViewModel {
         // TODO: Push / Pull data to / from database
     }
     
-    func pullUserData() async {
-        guard let authUser = authClient.authUser else { return } // force user to sign in
-        
-        do {
-            currentUser = try await datastoreClient.get(User.self, for: authUser.uid) // while get function is awaited, show loading screen (beautiful version ;D)
-        } catch {
-            showError(error, with: "Getting user data failed") // Handle error via 'router'
-        }
-    }
-    
-    func pushUserData() async {
-        guard let currentUser else { return } // handle issue via alert -> 'router' MARK: ||| or log issue, since this should never be a problem
-        
-        do {
-            try await datastoreClient.set(data: currentUser) // optionally present beautiful loading screen (if func was initiated by user itself) MARK: ||| or present progress view in a corner (like games do)
-        } catch {
-            showError(error, with: "Saving user data failed") // Handle error via 'router'
-        }
-    }
+//    func pullUserData() async {
+//        guard let authUser = authClient.authUser else { return } // force user to sign in
+//        
+//        do {
+//            currentUser = try await datastoreClient.get(User.self, for: authUser.uid) // while get function is awaited, show loading screen (beautiful version ;D)
+//        } catch {
+//            showError(error, with: "Getting user data failed") // Handle error via 'router'
+//        }
+//    }
+//    
+//    func pushUserData() async {
+//        guard let currentUser else { return } // handle issue via alert -> 'router' MARK: ||| or log issue, since this should never be a problem
+//        
+//        do {
+//            try await datastoreClient.set(data: currentUser) // optionally present beautiful loading screen (if func was initiated by user itself) MARK: ||| or present progress view in a corner (like games do)
+//        } catch {
+//            showError(error, with: "Saving user data failed") // Handle error via 'router'
+//        }
+//    }
     
     func userSignOut() {
         Task {
