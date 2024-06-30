@@ -54,7 +54,7 @@ struct HandledEnvironment<C>: View where C: View {
         var body: some View {
             content()
                 .environment(viewModel)
-                .environment(\.applicationState, viewModel.applicationState)
+                .environment(\.applicationState, appState)
         }
     }
 }
