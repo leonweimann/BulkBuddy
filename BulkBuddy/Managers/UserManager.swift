@@ -13,6 +13,9 @@ final actor UserManager {
     @Injected(\.authClient) private var auth
     @Injected(\.datastoreClient) private var datastore
     
+    var isSigned: Bool { auth.authUser != nil }
+    var signedUserID: String? { auth.authUser?.uid }
+    
     func createUser(_ user: User, with password: String) async throws {
         precondition(
             password.isValidPassword,
@@ -72,6 +75,11 @@ final actor UserManager {
         } catch {
             throw wrappedError(error)
         }
+    }
+    
+    func userModel() async throws -> User {
+        guard let signedUserID else { throw UserError.userIsNotAuthenticated }
+        return try await datastore.get(User.self, for: signedUserID)
     }
     
     private func wrappedError(_ error: any Error) -> UserError {
