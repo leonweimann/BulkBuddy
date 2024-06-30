@@ -67,14 +67,12 @@ struct InjectedValues {
     }
     
     static func configure(for appState: ApplicationState) {
-        switch appState {
-        case .mocked:
-            Self[\.authClient] = MockAuthenticationClient()
-            Self[\.datastoreClient] = MockDatastoreClient()
-        case .production:
-            Self[\.authClient] = FirebaseAuthenticationClient()
-            Self[\.datastoreClient] = FirebaseDatastoreClient()
-        }
+//        switch appState {
+//        case .mocked:
+//            Self[\.authClient] = MockAuthenticationClient()
+//        case .production:
+//            Self[\.authClient] = FirebaseAuthenticationClient()
+//        }
     }
 }
 

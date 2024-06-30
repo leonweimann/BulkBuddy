@@ -26,7 +26,7 @@ final actor UserManager {
                 throw UserError.userAlreadyExists
             }
             
-            async let createAuthProfile: () = auth.createUser(email: user.email, password: password)
+            async let createAuthProfile = auth.createUser(email: user.email, password: password)
             async let createDatastoreProfile: () = datastore.set(data: user)
             
             let (_, _) = try await (createAuthProfile, createDatastoreProfile)

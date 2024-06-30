@@ -11,17 +11,40 @@ import Foundation
 
 // MARK: - DatastoreClient
 
-protocol DatastoreClient {
-    func snapshot<T>(_ dataType: T.Type, for documentPath: String) async throws -> DocumentSnapshot where T: FirestoreData
-    func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T: FirestoreData
-    func set(data: any FirestoreData) async throws
-    func delete(data: any FirestoreData) async throws
+final class DatastoreClient {
+    private let database = Firestore.firestore()
+    
+    func snapshot<T>(_ dataType: T.Type, for documentPath: String) async throws -> DocumentSnapshot where T: FirestoreData {
+        try await database
+            .collection(dataType._collectionPath)
+            .document(documentPath)
+            .getDocument()
+    }
+    
+    func get<T>(_ dataType: T.Type, for documentPath: String) async throws -> T where T: FirestoreData {
+        try await snapshot(dataType, for: documentPath)
+            .data(as: dataType)
+    }
+    
+    func set(data: any FirestoreData) async throws {
+        try await database
+            .collection(data.collectionPath)
+            .document(data.documentPath)
+            .setData(data.firestoreDocumentData())
+    }
+    
+    func delete(data: any FirestoreData) async throws {
+        try await database
+            .collection(data.collectionPath)
+            .document(data.documentPath)
+            .delete()
+    }
 }
 
 // MARK: - InjectionKey
 
 fileprivate struct DatastoreClientInjectionKey: InjectionKey {
-    static var currentValue: any DatastoreClient = MockDatastoreClient()
+    static var currentValue = DatastoreClient()
 }
 
 extension InjectedValues {
