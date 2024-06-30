@@ -16,6 +16,7 @@ protocol AuthenticationClient {
     func createUser(email: String, password: String) async throws
     func signIn(email: String, password: String) async throws
     func signOut() throws
+    func delete() async throws
 }
 
 // MARK: - Injection Key

@@ -25,4 +25,8 @@ final class FirebaseAuthenticationClient: AuthenticationClient {
     func signOut() throws {
         try auth.signOut()
     }
+    
+    func delete() async throws {
+        try await authUser?.delete()
+    }
 }

@@ -24,4 +24,8 @@ final class MockAuthenticationClient: AuthenticationClient {
     func signOut() throws {
         print("User would be signed out.")
     }
+    
+    func delete() async throws {
+        print("User would be deleted.")
+    }
 }
