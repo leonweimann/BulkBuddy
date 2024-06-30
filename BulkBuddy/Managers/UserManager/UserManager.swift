@@ -18,6 +18,7 @@ protocol UserManager {
     func signOut() throws
     func deleteUser(_ user: User) async throws
     func userModel() async throws -> User
+    func saveUserModel(_ user: User) async throws
 }
 
 extension UserManager {

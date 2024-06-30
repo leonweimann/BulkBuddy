@@ -85,4 +85,17 @@ final class FirebaseUserManager: UserManager {
             throw wrappedError(error)
         }
     }
+    
+    func saveUserModel(_ user: User) async throws {
+        precondition(
+            user.isValid,
+            "[Bug] Somehow there was a saveUserModel request with an inappropriate user model"
+        )
+        
+        do {
+            try await datastore.set(data: user)
+        } catch {
+            throw wrappedError(error)
+        }
+    }
 }
