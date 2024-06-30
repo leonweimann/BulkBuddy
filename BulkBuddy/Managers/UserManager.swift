@@ -37,6 +37,25 @@ final actor UserManager {
         }
     }
     
+    func signIn(email: String, password: String) async throws -> User {
+        precondition(
+            email.isValidEmail && password.isValidPassword,
+            "[Bug] Somehow there was a signIn request with an inappropriate email or password"
+        )
+        
+        do {
+            let result = try await auth.signIn(email: email, password: password)
+            let user = try await datastore.get(User.self, for: result.user.uid)
+            return user
+        } catch {
+            throw wrappedError(error)
+        }
+    }
+    
+    func signOut() throws {
+        try auth.signOut()
+    }
+    
     func deleteUser(_ user: User) async throws {
         precondition(
             user.isValid,
