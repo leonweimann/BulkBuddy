@@ -9,7 +9,7 @@ import SwiftUI
 
 // MARK: - ValidationClient
 
-final actor ValidationClient {
+fileprivate final actor ValidationClient {
     private init() { }
     
     static func checkValidity(eMail: String) -> Bool {
@@ -54,6 +54,20 @@ final actor ValidationClient {
         }
         return lowerBound...upperBound
     }
+    
+    static func checkValidity(user: User) -> Bool {
+        guard
+            !user.id.isEmpty,
+            !user.name.isEmpty,
+            !user.email.isValidEmail,
+            !user.phoneNumber.isValidPhoneNumber,
+            !user.birthDate.isValidAge
+        else {
+            return false
+        }
+        
+        return true
+    }
 }
 
 extension String {
@@ -73,5 +87,11 @@ extension String {
 extension Date {
     var isValidAge: Bool {
         ValidationClient.checkValidity(birthDate: self)
+    }
+}
+
+extension User {
+    var isValid: Bool {
+        ValidationClient.checkValidity(user: self)
     }
 }
